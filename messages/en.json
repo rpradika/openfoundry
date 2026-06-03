@@ -97,6 +97,12 @@
     "buyers": {
       "eyebrow": "Why buyers choose this supplier",
       "fallbackTitle": "What buyers get in practice"
+    },
+    "processHighlights": {
+      "eyebrow": "Process highlights",
+      "title": "Programmes documented in process briefs",
+      "intro": "Download the technical brief for each programme — parts geometry, materials, KPI evidence and qualification routes.",
+      "downloadPdf": "Download brief"
     }
   }
 }

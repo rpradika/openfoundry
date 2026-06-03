@@ -165,6 +165,7 @@ export interface ProcessHighlight {
   kpiProof: string;
   sourcePdfUrl: string;
   sourcePdfFilename: string;
+  imageUrl: string;
   tags: string[];
 }
 
@@ -259,6 +260,8 @@ export interface Blueprint {
   supplierType: string;
   navLinks: string[];
   templateSlots: TemplateSlots;
+  processHighlights?: ProcessHighlight[];
+  advancedManufacturing?: EquipmentCard[];
 }
 
 export const blueprint = blueprintJson as unknown as Blueprint;

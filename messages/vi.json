@@ -97,6 +97,12 @@
     "buyers": {
       "eyebrow": "Vì sao người mua chọn nhà cung cấp này",
       "fallbackTitle": "Lợi ích thực tế cho người mua"
+    },
+    "processHighlights": {
+      "eyebrow": "Điểm nổi bật quy trình",
+      "title": "Các chương trình đã được tài liệu hoá trong hồ sơ kỹ thuật",
+      "intro": "Tải hồ sơ kỹ thuật của từng chương trình — hình học chi tiết, vật liệu, bằng chứng KPI và lộ trình phê duyệt.",
+      "downloadPdf": "Tải hồ sơ"
     }
   }
 }

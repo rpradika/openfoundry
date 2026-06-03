@@ -3,8 +3,18 @@ import { useLocale, useTranslations } from "next-intl";
 import { getBlueprint } from "@/lib/blueprint";
 import { SectionHeader } from "./section-header";
 
-const CAP_IMAGE_FALLBACK =
-  "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80";
+const CAPABILITY_IMAGE_MAP: Record<string, string> = {
+  "CNC Machining": "/images/process/aluminum-extrusion-6.jpg",
+  "Casting": "/images/highlights/investment-casting.jpg",
+  "Sheet Metal Fabrication": "/images/process/stamping-1.jpg",
+  "Welding & Assembly": "/images/process/aluminum-extrusion-4.jpg",
+  "Đúc": "/images/highlights/investment-casting.jpg",
+  "Gia công CNC": "/images/process/aluminum-extrusion-6.jpg",
+  "Gia công kim loại tấm": "/images/process/stamping-1.jpg",
+  "Hàn & lắp ráp": "/images/process/aluminum-extrusion-4.jpg",
+};
+
+const CAP_IMAGE_FALLBACK = "/images/process/powder-metallurgy-4.jpg";
 
 export function Capabilities() {
   const blueprint = getBlueprint(useLocale());
@@ -30,15 +40,15 @@ export function Capabilities() {
             {featured.map((c) => (
               <article
                 key={c.name}
-                className="overflow-hidden border border-border-soft bg-bg-surface transition-shadow hover:shadow-[0_8px_24px_rgba(15,23,42,0.08)]"
+                className="group overflow-hidden border border-border-soft bg-bg-surface transition-all hover:border-brand/40 hover:shadow-[0_8px_24px_rgba(15,23,42,0.08)]"
               >
-                <div className="relative aspect-[16/9] w-full">
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0f1830]">
                   <Image
-                    src={CAP_IMAGE_FALLBACK}
+                    src={CAPABILITY_IMAGE_MAP[c.name] ?? CAP_IMAGE_FALLBACK}
                     alt={c.name}
                     fill
                     sizes="(min-width:768px) 260px, 100vw"
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 </div>
                 <div className="px-4.5 pt-4 pb-5">

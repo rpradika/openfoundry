@@ -11,6 +11,7 @@ import { QualityKpis } from "@/components/sections/quality-kpis";
 import { ProgrammeDelivery } from "@/components/sections/programme-delivery";
 import { Buyers } from "@/components/sections/buyers";
 import { CustomerLogos } from "@/components/sections/customer-logos";
+import { ProcessHighlights } from "@/components/sections/process-highlights";
 import { LeadTimesContact } from "@/components/sections/lead-times-contact";
 import { Footer } from "@/components/sections/footer";
 
@@ -34,6 +35,7 @@ export default async function Home({
         <Quality />
         <QualityKpis />
         <ProgrammeDelivery />
+        <ProcessHighlights />
         <Buyers />
         <CustomerLogos />
         <LeadTimesContact />
