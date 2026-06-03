@@ -73,7 +73,10 @@
     },
     "capabilities": {
       "eyebrow": "What we do",
-      "title": "Manufacturing capabilities"
+      "title": "Manufacturing capabilities",
+      "capabilityLabel": "Capability",
+      "qualityProof": "Quality proof",
+      "alsoAvailable": "Also available"
     },
     "materials": {
       "eyebrow": "Materials expertise",

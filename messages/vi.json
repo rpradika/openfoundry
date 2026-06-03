@@ -73,7 +73,10 @@
     },
     "capabilities": {
       "eyebrow": "Chúng tôi làm gì",
-      "title": "Năng lực sản xuất"
+      "title": "Năng lực sản xuất",
+      "capabilityLabel": "Năng lực",
+      "qualityProof": "Bằng chứng chất lượng",
+      "alsoAvailable": "Năng lực bổ sung"
     },
     "materials": {
       "eyebrow": "Chuyên môn vật liệu",
