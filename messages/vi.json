@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "getInTouch": "Liên hệ",
+    "links": {
+      "whatWeDo": "Chúng tôi làm gì",
+      "capabilities": "Năng lực",
+      "services": "Dịch vụ",
+      "contact": "Liên hệ"
+    }
+  },
+  "footer": {
+    "tagline": "Thông tin nhà cung cấp được cấu trúc — năng lực, bằng chứng chất lượng và liên hệ — sắp xếp theo cách các nhóm mua hàng mong đợi.",
+    "provenance": "Suy luận từ bằng chứng công khai và được xác minh cùng bạn trong quá trình tiếp nhận. Đây thường là những trường giúp nhà cung cấp tạo dựng nhiều niềm tin nhất với người mua — chúng tôi định lượng chúng cùng với bạn từ dữ liệu sản xuất.",
+    "sectionContact": "Liên hệ",
+    "sectionCompany": "Công ty",
+    "valuesMarkedWith": "Giá trị được đánh dấu *",
+    "links": {
+      "about": "Giới thiệu",
+      "capabilities": "Năng lực",
+      "quality": "Chất lượng",
+      "contact": "Liên hệ"
+    }
+  },
+  "contact": {
+    "leadTimesEyebrow": "Thời gian & năng lực sản xuất",
+    "typeColumn": "Loại",
+    "durationColumn": "Thời gian",
+    "orReachOutDirectly": "Hoặc liên hệ trực tiếp",
+    "getInTouchEyebrow": "Liên hệ với chúng tôi"
+  },
+  "rfq": {
+    "ctaSend": "Gửi yêu cầu báo giá",
+    "sending": "Đang gửi…",
+    "receivedHeading": "Đã nhận",
+    "receivedBody": "Cảm ơn — đội ngũ của chúng tôi sẽ phản hồi trong vòng 24–48 giờ.",
+    "label": {
+      "name": "Tên",
+      "company": "Công ty",
+      "email": "Email",
+      "phone": "Điện thoại",
+      "phoneOptional": "(tùy chọn)",
+      "project": "Dự án"
+    },
+    "projectPlaceholder": "Chi tiết linh kiện, quy trình, vật liệu, sản lượng mục tiêu, lịch trình mong muốn…",
+    "errors": {
+      "nameRequired": "Vui lòng nhập tên",
+      "emailInvalid": "Vui lòng nhập email hợp lệ",
+      "companyRequired": "Vui lòng nhập tên công ty",
+      "projectMin": "Vui lòng mô tả thêm về dự án (từ 20 ký tự)",
+      "sendFailed": "Gửi thất bại",
+      "networkError": "Lỗi kết nối"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Ngôn ngữ",
+    "en": "English",
+    "vi": "Tiếng Việt"
+  },
+  "sections": {
+    "about": {
+      "eyebrow": "Về {company}",
+      "tileLabels": {
+        "capabilityAreas": "Lĩnh vực năng lực",
+        "accreditations": "Chứng nhận",
+        "primaryCert": "Chứng nhận chính",
+        "industry": "Ngành"
+      }
+    },
+    "capabilities": {
+      "eyebrow": "Chúng tôi làm gì",
+      "title": "Năng lực sản xuất"
+    },
+    "materials": {
+      "eyebrow": "Chuyên môn vật liệu",
+      "title": "Vật liệu và mác"
+    },
+    "quality": {
+      "eyebrow": "Chất lượng và chứng nhận",
+      "title": "Tiêu chuẩn và hệ thống chất lượng",
+      "proofLabel": "Bằng chứng chất lượng"
+    },
+    "qualityKpis": {
+      "eyebrow": "Xuất sắc về hệ thống chất lượng",
+      "title": "Chỉ số hiệu suất"
+    },
+    "programmeDelivery": {
+      "eyebrow": "Triển khai chương trình",
+      "introTitle": "Từ đánh giá kỹ thuật đến giao hàng lặp lại.",
+      "introSub": "Đánh giá DFM, các điểm kiểm soát sẵn sàng khởi chạy và điều phối giao hàng — những công việc thầm lặng giữ cho chương trình OEM đúng tiến độ."
+    },
+    "buyers": {
+      "eyebrow": "Vì sao người mua chọn nhà cung cấp này",
+      "fallbackTitle": "Lợi ích thực tế cho người mua"
+    }
+  }
+}

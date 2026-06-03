@@ -1,0 +1,42 @@
+# Vcuinternational
+
+> Multi-process manufacturing supplier based in Ho Chi Minh City, Vietnam, supporting Automotive, Defence, and Marine programmes with CNC machining, casting, sheet metal fabrication, and welding & assembly. Quality systems backed by IATF 16949 and ISO 9001:2015.
+
+Vcuinternational operates a single facility at Huynh Van Luy Street, Quarter 7, Phu Loi Ward, Ho Chi Minh City, Vietnam. The company positions itself as a coordinated multi-process partner for Western OEMs and Tier-1 suppliers sourcing in Southeast Asia.
+
+## Capabilities
+
+- [CNC Machining](https://www.vcuinternational.com/#capabilities): Precision-machined parts with dimensional verification support.
+- [Casting](https://www.vcuinternational.com/#capabilities): Metal casting support for repeatable automotive and defence components.
+- [Sheet Metal Fabrication](https://www.vcuinternational.com/#capabilities): Formed and fabricated parts with downstream finishing support.
+- [Welding & Assembly](https://www.vcuinternational.com/#capabilities): Fabrication and assembly support for coordinated multi-stage component supply.
+
+## Industries served
+
+- Automotive
+- Defence
+- Marine
+
+## Certifications
+
+- IATF 16949
+- ISO 9001:2015
+- ISO 14001
+
+## Lead times
+
+- RFQ response: 24–48 hour technical review
+- Project discussion: Engineering team engagement within 3 business days
+
+## Site
+
+- [Homepage](https://www.vcuinternational.com/): Company overview, capabilities, quality systems, programme delivery, and contact.
+- [About](https://www.vcuinternational.com/#about): Multi-process manufacturing positioning.
+- [Capabilities](https://www.vcuinternational.com/#capabilities): Process detail.
+- [Quality](https://www.vcuinternational.com/#quality): Certifications and quality systems.
+- [Contact](https://www.vcuinternational.com/#contact): Lead times and RFQ contact.
+
+## Contact
+
+- Email: info@vcuinternational.com
+- Address: Huynh Van Luy Street, Quarter 7, Phu Loi Ward, Ho Chi Minh City, 821334, Vietnam
