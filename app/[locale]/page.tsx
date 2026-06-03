@@ -10,6 +10,7 @@ import { Quality } from "@/components/sections/quality";
 import { QualityKpis } from "@/components/sections/quality-kpis";
 import { ProgrammeDelivery } from "@/components/sections/programme-delivery";
 import { Buyers } from "@/components/sections/buyers";
+import { CustomerLogos } from "@/components/sections/customer-logos";
 import { LeadTimesContact } from "@/components/sections/lead-times-contact";
 import { Footer } from "@/components/sections/footer";
 
@@ -34,6 +35,7 @@ export default async function Home({
         <QualityKpis />
         <ProgrammeDelivery />
         <Buyers />
+        <CustomerLogos />
         <LeadTimesContact />
       </main>
       <Footer />

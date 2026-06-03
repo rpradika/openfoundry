@@ -64,7 +64,12 @@
         "accreditations": "Chứng nhận",
         "primaryCert": "Chứng nhận chính",
         "industry": "Ngành"
-      }
+      },
+      "buyerChallengeEyebrow": "Vì sao điều này quan trọng"
+    },
+    "customerLogos": {
+      "eyebrow": "Được tin tưởng bởi",
+      "intro": "Mối quan hệ cung ứng lâu dài qua các chương trình ô tô, quốc phòng và hàng hải."
     },
     "capabilities": {
       "eyebrow": "Chúng tôi làm gì",
@@ -86,7 +91,8 @@
     "programmeDelivery": {
       "eyebrow": "Triển khai chương trình",
       "introTitle": "Từ đánh giá kỹ thuật đến giao hàng lặp lại.",
-      "introSub": "Đánh giá DFM, các điểm kiểm soát sẵn sàng khởi chạy và điều phối giao hàng — những công việc thầm lặng giữ cho chương trình OEM đúng tiến độ."
+      "introSub": "Đánh giá DFM, các điểm kiểm soát sẵn sàng khởi chạy và điều phối giao hàng — những công việc thầm lặng giữ cho chương trình OEM đúng tiến độ.",
+      "productionScaleEyebrow": "Quy mô sản xuất"
     },
     "buyers": {
       "eyebrow": "Vì sao người mua chọn nhà cung cấp này",

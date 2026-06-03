@@ -12,6 +12,8 @@ export function ProgrammeDelivery() {
   const primaryMethod = blueprint.qualityMethods?.[0]?.method;
   const primarySupport = support[0]?.title;
   const industries = (blueprint.industries ?? []).slice(0, 3).map((i) => i.name);
+  const industryIntro = blueprint.industryIntro;
+  const stages = blueprint.productionScale ?? [];
 
   const topChips = [primaryCert, primaryMethod, primarySupport].filter(
     (c): c is string => Boolean(c),
@@ -56,6 +58,11 @@ export function ProgrammeDelivery() {
               </li>
             ))}
           </ul>
+        )}
+        {industryIntro && (
+          <p className="mx-auto mt-5 max-w-[640px] text-[13px] leading-[1.65] text-white/[0.55]">
+            {industryIntro}
+          </p>
         )}
       </div>
 
@@ -118,6 +125,29 @@ export function ProgrammeDelivery() {
               </div>
             )}
           </div>
+
+          {stages.length > 0 && (
+            <div className="mt-10 border-t border-border-soft pt-7">
+              <div className="mb-4 font-mono text-[9px] font-semibold uppercase tracking-[0.22em] text-text-muted">
+                {t("productionScaleEyebrow")}
+              </div>
+              <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+                {stages.map((s) => (
+                  <li
+                    key={s.stage}
+                    className="rounded-[12px] border border-border-soft bg-bg-surface px-4 py-3"
+                  >
+                    <div className="mb-1 text-[12px] font-semibold tracking-[-0.01em] text-text-primary">
+                      {s.stage}
+                    </div>
+                    <p className="text-[11px] leading-[1.6] text-text-secondary">
+                      {s.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </section>
     </>

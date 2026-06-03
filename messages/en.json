@@ -64,7 +64,12 @@
         "accreditations": "Accreditations",
         "primaryCert": "Primary cert",
         "industry": "Industry"
-      }
+      },
+      "buyerChallengeEyebrow": "Why this matters"
+    },
+    "customerLogos": {
+      "eyebrow": "Trusted by",
+      "intro": "Long-running supply relationships across Automotive, Defence and Marine programmes."
     },
     "capabilities": {
       "eyebrow": "What we do",
@@ -86,7 +91,8 @@
     "programmeDelivery": {
       "eyebrow": "Programme delivery",
       "introTitle": "From technical review to repeat delivery.",
-      "introSub": "DFM review, launch-readiness checkpoints and delivery coordination — the unglamorous work that keeps OEM programmes on schedule."
+      "introSub": "DFM review, launch-readiness checkpoints and delivery coordination — the unglamorous work that keeps OEM programmes on schedule.",
+      "productionScaleEyebrow": "Production scale"
     },
     "buyers": {
       "eyebrow": "Why buyers choose this supplier",

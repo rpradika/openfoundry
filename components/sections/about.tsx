@@ -5,7 +5,7 @@ import { SectionHeader } from "./section-header";
 export function About() {
   const blueprint = getBlueprint(useLocale());
   const t = useTranslations("sections.about");
-  const { company, capabilityIntro, whyChooseUsIntro } = blueprint;
+  const { company, capabilityIntro, whyChooseUsIntro, buyerChallengeTeaser } = blueprint;
 
   const capabilityCount =
     blueprint.allCapabilitiesCanonical?.length ??
@@ -57,6 +57,24 @@ export function About() {
               </li>
             ))}
           </ul>
+        )}
+
+        {buyerChallengeTeaser?.title && (
+          <aside className="mt-10 grid gap-6 border-l-2 border-brand bg-bg-surface px-6 py-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-10 md:px-8 md:py-7">
+            <div className="font-mono text-[10px] font-semibold uppercase tracking-[0.26em] text-brand">
+              {t("buyerChallengeEyebrow")}
+            </div>
+            <div>
+              <p className="mb-2 text-[clamp(17px,2vw,21px)] font-semibold leading-[1.25] tracking-[-0.025em] text-text-primary">
+                {buyerChallengeTeaser.title}
+              </p>
+              {buyerChallengeTeaser.summary && (
+                <p className="text-[14px] leading-[1.65] text-text-secondary">
+                  {buyerChallengeTeaser.summary}
+                </p>
+              )}
+            </div>
+          </aside>
         )}
       </div>
     </section>
