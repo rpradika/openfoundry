@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { routing, type AppLocale } from "@/i18n/routing";
-import { blueprint } from "@/lib/blueprint";
+import { getBlueprint } from "@/lib/blueprint";
 import { graphLD, serializeLD } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
 import "../globals.css";
@@ -14,9 +14,6 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-
-const title = `${blueprint.company.name} — ${blueprint.company.headline}`;
-const description = blueprint.company.about;
 
 const OG_LOCALE: Record<AppLocale, string> = {
   en: "en_US",
@@ -36,12 +33,15 @@ export async function generateMetadata({
   const isValid = (routing.locales as readonly string[]).includes(locale);
   const resolved: AppLocale = isValid ? (locale as AppLocale) : routing.defaultLocale;
   const canonical = resolved === routing.defaultLocale ? "/" : `/${resolved}`;
+  const bp = getBlueprint(resolved);
+  const title = `${bp.company.name} — ${bp.company.headline}`;
+  const description = bp.company.about;
 
   return {
     metadataBase: new URL(SITE_URL),
     title,
     description,
-    applicationName: blueprint.company.name,
+    applicationName: bp.company.name,
     alternates: {
       canonical,
       languages: {
@@ -53,7 +53,7 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       url: canonical,
-      siteName: blueprint.company.name,
+      siteName: bp.company.name,
       title,
       description,
       locale: OG_LOCALE[resolved],
@@ -65,7 +65,7 @@ export async function generateMetadata({
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: `${blueprint.company.name} — Multi-process manufacturing in Vietnam`,
+          alt: `${bp.company.name} — Multi-process manufacturing in Vietnam`,
         },
       ],
     },

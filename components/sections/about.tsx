@@ -1,7 +1,10 @@
-import { blueprint } from "@/lib/blueprint";
+import { useLocale, useTranslations } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 import { SectionHeader } from "./section-header";
 
 export function About() {
+  const blueprint = getBlueprint(useLocale());
+  const t = useTranslations("sections.about");
   const { company, capabilityIntro, whyChooseUsIntro } = blueprint;
 
   const capabilityCount =
@@ -13,13 +16,13 @@ export function About() {
 
   const tiles: { value: string; label: string }[] = [];
   if (capabilityCount) {
-    tiles.push({ value: String(capabilityCount), label: "Capability Areas" });
+    tiles.push({ value: String(capabilityCount), label: t("tileLabels.capabilityAreas") });
   }
   if (accreditationCount) {
-    tiles.push({ value: String(accreditationCount), label: "Accreditations" });
+    tiles.push({ value: String(accreditationCount), label: t("tileLabels.accreditations") });
   }
-  if (primaryCert) tiles.push({ value: primaryCert, label: "Primary cert" });
-  if (primaryIndustry) tiles.push({ value: primaryIndustry, label: "Industry" });
+  if (primaryCert) tiles.push({ value: primaryCert, label: t("tileLabels.primaryCert") });
+  if (primaryIndustry) tiles.push({ value: primaryIndustry, label: t("tileLabels.industry") });
 
   return (
     <section
@@ -27,7 +30,7 @@ export function About() {
       className="border-b border-border-soft bg-bg-alt"
     >
       <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
-        <SectionHeader eyebrow={`About ${company.name}`} title={company.about} />
+        <SectionHeader eyebrow={t("eyebrow", { company: company.name })} title={company.about} />
 
         <div className="mb-10 grid max-w-[680px] gap-3.5">
           <p className="text-[15px] leading-[1.72] text-text-secondary">

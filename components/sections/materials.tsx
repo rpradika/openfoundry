@@ -1,7 +1,10 @@
-import { blueprint } from "@/lib/blueprint";
+import { useLocale, useTranslations } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 import { SectionHeader } from "./section-header";
 
 export function Materials() {
+  const blueprint = getBlueprint(useLocale());
+  const t = useTranslations("sections.materials");
   const materials = blueprint.materials ?? [];
   if (materials.length === 0) return null;
 
@@ -12,8 +15,8 @@ export function Materials() {
     >
       <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
         <SectionHeader
-          eyebrow="Materials expertise"
-          title="Materials & grades"
+          eyebrow={t("eyebrow")}
+          title={t("title")}
         />
 
         <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(220px,1fr))]">

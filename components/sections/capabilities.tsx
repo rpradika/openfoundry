@@ -1,11 +1,14 @@
 import Image from "next/image";
-import { blueprint } from "@/lib/blueprint";
+import { useLocale, useTranslations } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 import { SectionHeader } from "./section-header";
 
 const CAP_IMAGE_FALLBACK =
   "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80";
 
 export function Capabilities() {
+  const blueprint = getBlueprint(useLocale());
+  const t = useTranslations("sections.capabilities");
   const featured = blueprint.capabilities.slice(0, 4);
   const additional = blueprint.additionalCapabilities ?? [];
   const intro = blueprint.capabilityIntro;
@@ -17,8 +20,8 @@ export function Capabilities() {
     >
       <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
         <SectionHeader
-          eyebrow="What we do"
-          title="Manufacturing capabilities"
+          eyebrow={t("eyebrow")}
+          title={t("title")}
           intro={intro}
         />
 

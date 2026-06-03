@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { blueprint } from "@/lib/blueprint";
+import { useLocale, useTranslations } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 
 const COMPANY_LINKS = [
   { key: "about", href: "#about" },
@@ -11,6 +11,7 @@ const COMPANY_LINKS = [
 
 export function Footer() {
   const t = useTranslations("footer");
+  const blueprint = getBlueprint(useLocale());
   const { logoUrl } = blueprint.brand;
   const companyName = blueprint.company.name;
   const contact = blueprint.contactDetails;

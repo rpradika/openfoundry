@@ -1,9 +1,10 @@
-import { useTranslations } from "next-intl";
-import { blueprint } from "@/lib/blueprint";
+import { useLocale, useTranslations } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 import { RfqForm } from "./rfq-form";
 
 export function LeadTimesContact() {
   const t = useTranslations("contact");
+  const blueprint = getBlueprint(useLocale());
   const leadTimes = blueprint.leadTimes ?? [];
   const contact = blueprint.contactDetails;
   const contactCta = blueprint.templateSlots?.contactCta ?? "Request a Quote";

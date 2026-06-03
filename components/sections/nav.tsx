@@ -1,18 +1,14 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { blueprint } from "@/lib/blueprint";
+import { useLocale, useTranslations } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 import { LanguageSwitcher } from "./language-switcher";
 
-const NAV_ANCHORS: Record<string, string> = {
-  "what we do": "#about",
-  capabilities: "#capabilities",
-  services: "#programme-delivery",
-  contact: "#contact",
-};
-
-function anchorFor(label: string): string | null {
-  return NAV_ANCHORS[label.toLowerCase()] ?? null;
-}
+const NAV_ITEMS = [
+  { key: "whatWeDo", href: "#about" },
+  { key: "capabilities", href: "#capabilities" },
+  { key: "services", href: "#programme-delivery" },
+  { key: "contact", href: "#contact" },
+] as const;
 
 function ChevronDown() {
   return (
@@ -37,12 +33,9 @@ function ChevronDown() {
 
 export function Nav() {
   const t = useTranslations("nav");
+  const blueprint = getBlueprint(useLocale());
   const { logoUrl } = blueprint.brand;
   const companyName = blueprint.company.name;
-  const labels = blueprint.navLinks ?? [];
-  const links = labels
-    .map((label) => ({ label, href: anchorFor(label) }))
-    .filter((l): l is { label: string; href: string } => Boolean(l.href));
 
   return (
     <nav className="sticky top-0 z-[100] flex h-16 items-center justify-between gap-6 border-b border-white/[0.08] bg-bg-hero px-5 md:px-10">
@@ -68,13 +61,13 @@ export function Nav() {
       </a>
 
       <ul className="hidden items-center gap-8 md:flex">
-        {links.map(({ label, href }) => (
-          <li key={label}>
+        {NAV_ITEMS.map(({ key, href }) => (
+          <li key={key}>
             <a
               href={href}
               className="flex items-center gap-[5px] text-[13px] font-medium text-white transition-opacity hover:opacity-[0.78]"
             >
-              {label}
+              {t(`links.${key}`)}
               <ChevronDown />
             </a>
           </li>

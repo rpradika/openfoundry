@@ -1,12 +1,14 @@
-import { blueprint } from "@/lib/blueprint";
+import { useLocale, useTranslations } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 import { SectionHeader } from "./section-header";
 
 export function Buyers() {
+  const blueprint = getBlueprint(useLocale());
+  const t = useTranslations("sections.buyers");
   const trust = blueprint.trustSignals ?? [];
   const proofs = blueprint.buyerProofs ?? [];
   const title =
-    blueprint.whyChooseUsIntro?.replace(/\.$/, "") ??
-    "What buyers get in practice";
+    blueprint.whyChooseUsIntro?.replace(/\.$/, "") ?? t("fallbackTitle");
 
   if (trust.length === 0 && proofs.length === 0) return null;
 
@@ -17,7 +19,7 @@ export function Buyers() {
     >
       <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
         <SectionHeader
-          eyebrow="Why buyers choose this supplier"
+          eyebrow={t("eyebrow")}
           title={title}
         />
 

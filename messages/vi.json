@@ -1,6 +1,12 @@
 {
   "nav": {
-    "getInTouch": "Liên hệ"
+    "getInTouch": "Liên hệ",
+    "links": {
+      "whatWeDo": "Chúng tôi làm gì",
+      "capabilities": "Năng lực",
+      "services": "Dịch vụ",
+      "contact": "Liên hệ"
+    }
   },
   "footer": {
     "tagline": "Thông tin nhà cung cấp được cấu trúc — năng lực, bằng chứng chất lượng và liên hệ — sắp xếp theo cách các nhóm mua hàng mong đợi.",
@@ -49,5 +55,42 @@
     "label": "Ngôn ngữ",
     "en": "English",
     "vi": "Tiếng Việt"
+  },
+  "sections": {
+    "about": {
+      "eyebrow": "Về {company}",
+      "tileLabels": {
+        "capabilityAreas": "Lĩnh vực năng lực",
+        "accreditations": "Chứng nhận",
+        "primaryCert": "Chứng nhận chính",
+        "industry": "Ngành"
+      }
+    },
+    "capabilities": {
+      "eyebrow": "Chúng tôi làm gì",
+      "title": "Năng lực sản xuất"
+    },
+    "materials": {
+      "eyebrow": "Chuyên môn vật liệu",
+      "title": "Vật liệu và mác"
+    },
+    "quality": {
+      "eyebrow": "Chất lượng và chứng nhận",
+      "title": "Tiêu chuẩn và hệ thống chất lượng",
+      "proofLabel": "Bằng chứng chất lượng"
+    },
+    "qualityKpis": {
+      "eyebrow": "Xuất sắc về hệ thống chất lượng",
+      "title": "Chỉ số hiệu suất"
+    },
+    "programmeDelivery": {
+      "eyebrow": "Triển khai chương trình",
+      "introTitle": "Từ đánh giá kỹ thuật đến giao hàng lặp lại.",
+      "introSub": "Đánh giá DFM, các điểm kiểm soát sẵn sàng khởi chạy và điều phối giao hàng — những công việc thầm lặng giữ cho chương trình OEM đúng tiến độ."
+    },
+    "buyers": {
+      "eyebrow": "Vì sao người mua chọn nhà cung cấp này",
+      "fallbackTitle": "Lợi ích thực tế cho người mua"
+    }
   }
 }

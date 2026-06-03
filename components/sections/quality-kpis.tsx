@@ -1,7 +1,10 @@
-import { blueprint } from "@/lib/blueprint";
+import { useLocale, useTranslations } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 import { SectionHeader } from "./section-header";
 
 export function QualityKpis() {
+  const blueprint = getBlueprint(useLocale());
+  const t = useTranslations("sections.qualityKpis");
   const kpis = blueprint.templateSlots?.qualityKpis ?? [];
   if (kpis.length === 0) return null;
 
@@ -12,8 +15,8 @@ export function QualityKpis() {
     >
       <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
         <SectionHeader
-          eyebrow="Quality systems excellence"
-          title="Performance metrics"
+          eyebrow={t("eyebrow")}
+          title={t("title")}
           inverse
         />
 

@@ -1,7 +1,10 @@
-import { blueprint } from "@/lib/blueprint";
+import { useLocale, useTranslations } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 import { SectionHeader } from "./section-header";
 
 export function Quality() {
+  const blueprint = getBlueprint(useLocale());
+  const t = useTranslations("sections.quality");
   const certs = blueprint.certifications ?? [];
   const methods = blueprint.qualityMethods ?? [];
 
@@ -14,8 +17,8 @@ export function Quality() {
     >
       <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
         <SectionHeader
-          eyebrow="Quality & certification"
-          title="Standards & quality systems"
+          eyebrow={t("eyebrow")}
+          title={t("title")}
         />
 
         {certs.length > 0 && (
@@ -39,7 +42,7 @@ export function Quality() {
                 className="rounded-[20px] border border-border-soft bg-white/85 p-5 shadow-[0_12px_24px_rgba(15,23,42,0.04)]"
               >
                 <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-brand">
-                  Quality proof
+                  {t("proofLabel")}
                 </div>
                 <h3 className="mb-1.5 text-[15px] font-semibold tracking-[-0.02em] text-text-primary">
                   {m.method}

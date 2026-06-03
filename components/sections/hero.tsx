@@ -1,7 +1,9 @@
 import Image from "next/image";
-import { blueprint } from "@/lib/blueprint";
+import { useLocale } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 
 export function Hero() {
+  const blueprint = getBlueprint(useLocale());
   const eyebrow = blueprint.heroEyebrow;
   const headline = blueprint.heroHeadline;
   const sub = blueprint.heroSubheadline;

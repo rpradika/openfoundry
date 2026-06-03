@@ -1,5 +1,6 @@
 import type { LocalBusiness, Service, WebSite } from "schema-dts";
-import { blueprint } from "@/lib/blueprint";
+import { getBlueprint } from "@/lib/blueprint";
+import type { Blueprint } from "@/lib/blueprint";
 import { SITE_URL } from "@/lib/site";
 
 const ORG_ID = `${SITE_URL}/#organization`;
@@ -16,7 +17,7 @@ function serviceId(name: string): string {
   return `${SITE_URL}/#service-${slugify(name)}`;
 }
 
-function localBusinessNode(): LocalBusiness {
+function localBusinessNode(blueprint: Blueprint): LocalBusiness {
   const { company, brand, contactDetails, certifications = [], industries = [], capabilities = [] } = blueprint;
 
   return {
@@ -50,7 +51,7 @@ function localBusinessNode(): LocalBusiness {
   };
 }
 
-function webSiteNode(locale: string): WebSite {
+function webSiteNode(blueprint: Blueprint, locale: string): WebSite {
   return {
     "@type": "WebSite",
     "@id": SITE_ID,
@@ -61,7 +62,7 @@ function webSiteNode(locale: string): WebSite {
   };
 }
 
-function serviceNodes(): Service[] {
+function serviceNodes(blueprint: Blueprint): Service[] {
   const industries = blueprint.industries ?? [];
   return (blueprint.capabilities ?? []).map((c) => ({
     "@type": "Service",
@@ -76,9 +77,14 @@ function serviceNodes(): Service[] {
 }
 
 export function graphLD(locale: string = "en") {
+  const blueprint = getBlueprint(locale);
   return {
     "@context": "https://schema.org",
-    "@graph": [localBusinessNode(), webSiteNode(locale), ...serviceNodes()],
+    "@graph": [
+      localBusinessNode(blueprint),
+      webSiteNode(blueprint, locale),
+      ...serviceNodes(blueprint),
+    ],
   };
 }
 

@@ -1,6 +1,12 @@
 {
   "nav": {
-    "getInTouch": "Get in Touch"
+    "getInTouch": "Get in Touch",
+    "links": {
+      "whatWeDo": "What We Do",
+      "capabilities": "Capabilities",
+      "services": "Services",
+      "contact": "Contact"
+    }
   },
   "footer": {
     "tagline": "Structured supplier information — capability, quality evidence and contact — organised the way procurement teams expect.",
@@ -49,5 +55,42 @@
     "label": "Language",
     "en": "English",
     "vi": "Tiếng Việt"
+  },
+  "sections": {
+    "about": {
+      "eyebrow": "About {company}",
+      "tileLabels": {
+        "capabilityAreas": "Capability Areas",
+        "accreditations": "Accreditations",
+        "primaryCert": "Primary cert",
+        "industry": "Industry"
+      }
+    },
+    "capabilities": {
+      "eyebrow": "What we do",
+      "title": "Manufacturing capabilities"
+    },
+    "materials": {
+      "eyebrow": "Materials expertise",
+      "title": "Materials & grades"
+    },
+    "quality": {
+      "eyebrow": "Quality & certification",
+      "title": "Standards & quality systems",
+      "proofLabel": "Quality proof"
+    },
+    "qualityKpis": {
+      "eyebrow": "Quality systems excellence",
+      "title": "Performance metrics"
+    },
+    "programmeDelivery": {
+      "eyebrow": "Programme delivery",
+      "introTitle": "From technical review to repeat delivery.",
+      "introSub": "DFM review, launch-readiness checkpoints and delivery coordination — the unglamorous work that keeps OEM programmes on schedule."
+    },
+    "buyers": {
+      "eyebrow": "Why buyers choose this supplier",
+      "fallbackTitle": "What buyers get in practice"
+    }
   }
 }

@@ -1,12 +1,11 @@
-import { blueprint } from "@/lib/blueprint";
-
-const INTRO_TITLE = "From technical review to repeat delivery.";
-const INTRO_SUB =
-  "DFM review, launch-readiness checkpoints and delivery coordination — the unglamorous work that keeps OEM programmes on schedule.";
+import { useLocale, useTranslations } from "next-intl";
+import { getBlueprint } from "@/lib/blueprint";
 
 const ACCENT_OPACITIES = [1, 0.88, 0.76, 0.64, 0.52];
 
 export function ProgrammeDelivery() {
+  const blueprint = getBlueprint(useLocale());
+  const t = useTranslations("sections.programmeDelivery");
   const steps = blueprint.processWorkflow ?? [];
   const support = blueprint.programSupport ?? [];
   const primaryCert = blueprint.certifications?.[0]?.name;
@@ -26,13 +25,13 @@ export function ProgrammeDelivery() {
         className="border-b border-white/[0.08] bg-[linear-gradient(180deg,#182031_0%,#131b2d_100%)] px-5 py-18 text-center md:px-12"
       >
         <div className="mb-3.5 font-mono text-[10px] font-semibold uppercase tracking-[0.24em] text-white/[0.62]">
-          Programme delivery
+          {t("eyebrow")}
         </div>
         <h2 className="mb-3 text-[clamp(28px,4vw,48px)] font-bold leading-[0.97] tracking-[-0.05em] text-white">
-          {INTRO_TITLE}
+          {t("introTitle")}
         </h2>
         <p className="mx-auto mb-6 max-w-[600px] text-[15px] leading-[1.6] text-white/[0.68]">
-          {INTRO_SUB}
+          {t("introSub")}
         </p>
         {topChips.length > 0 && (
           <ul className="flex flex-wrap justify-center gap-2.5">
@@ -67,7 +66,7 @@ export function ProgrammeDelivery() {
         <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
           <div className="mb-5 flex items-center gap-3 font-mono text-[10px] font-semibold uppercase tracking-[0.26em] text-brand">
             <span className="inline-block h-px w-7 bg-brand" />
-            Programme delivery
+            {t("eyebrow")}
           </div>
 
           <div className="grid items-start gap-5 [grid-template-columns:minmax(0,1.15fr)_minmax(260px,0.85fr)] max-[900px]:grid-cols-1">

@@ -1,4 +1,5 @@
 import blueprintJson from "@/content/blueprint.json";
+import blueprintVi from "@/content/blueprint.vi.json";
 
 export type Provenance = "confirmed" | "inferred" | "suggested" | "extracted";
 
@@ -261,3 +262,12 @@ export interface Blueprint {
 }
 
 export const blueprint = blueprintJson as unknown as Blueprint;
+
+const BLUEPRINTS: Record<string, unknown> = {
+  en: blueprintJson,
+  vi: blueprintVi,
+};
+
+export function getBlueprint(locale: string): Blueprint {
+  return (BLUEPRINTS[locale] ?? blueprintJson) as Blueprint;
+}
