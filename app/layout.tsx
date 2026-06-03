@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/stock-heroes/cnc-1.jpg",
-        width: 900,
-        height: 920,
-        alt: `${blueprint.company.name} CNC machining facility`,
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${blueprint.company.name} — Multi-process manufacturing in Vietnam`,
       },
     ],
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/stock-heroes/cnc-1.jpg"],
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,

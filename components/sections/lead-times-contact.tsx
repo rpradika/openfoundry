@@ -12,7 +12,7 @@ export function LeadTimesContact() {
   return (
     <section id="contact" className="border-b border-white/[0.08] bg-bg-hero">
       <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
-        <div className="grid grid-cols-1 items-start gap-12 md:[grid-template-columns:minmax(0,1fr)_minmax(0,1.45fr)]">
+        <div className="grid grid-cols-1 items-start gap-12 lg:[grid-template-columns:minmax(0,1fr)_minmax(0,1.45fr)]">
           {leadTimes.length > 0 && (
             <div>
               <div className="mb-5 flex items-center gap-3 font-mono text-[10px] font-semibold uppercase tracking-[0.26em] text-white/55">
