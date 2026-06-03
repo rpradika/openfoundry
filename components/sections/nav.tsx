@@ -38,7 +38,7 @@ export function Nav() {
   const companyName = blueprint.company.name;
 
   return (
-    <nav className="sticky top-0 z-[100] flex h-16 items-center justify-between gap-6 border-b border-white/[0.08] bg-bg-hero px-5 md:px-10">
+    <nav className="sticky top-0 z-[100] flex h-20 items-center justify-between gap-6 border-b border-white/[0.08] bg-bg-hero px-5 md:px-10">
       <a
         href="#"
         className="flex flex-shrink-0 items-center gap-2.5"
@@ -48,13 +48,13 @@ export function Nav() {
           <Image
             src={logoUrl}
             alt={companyName}
-            width={120}
-            height={32}
-            className="h-8 w-auto object-contain"
+            width={200}
+            height={52}
+            className="h-[52px] w-auto object-contain"
             priority
           />
         ) : (
-          <span className="text-[15px] font-bold tracking-[-0.03em] text-white">
+          <span className="text-[18px] font-bold tracking-[-0.03em] text-white">
             {companyName}
           </span>
         )}
