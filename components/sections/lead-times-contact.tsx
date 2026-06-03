@@ -81,7 +81,7 @@ export function LeadTimesContact() {
                 {contactLine}
               </p>
             )}
-            <RfqForm ctaLabel={contactCta} />
+            <RfqForm />
           </div>
         </div>
       </div>
