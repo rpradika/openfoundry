@@ -50,14 +50,14 @@ function localBusinessNode(): LocalBusiness {
   };
 }
 
-function webSiteNode(): WebSite {
+function webSiteNode(locale: string): WebSite {
   return {
     "@type": "WebSite",
     "@id": SITE_ID,
     url: SITE_URL,
     name: blueprint.company.name,
     publisher: { "@id": ORG_ID },
-    inLanguage: "en",
+    inLanguage: locale,
   };
 }
 
@@ -75,10 +75,10 @@ function serviceNodes(): Service[] {
   }));
 }
 
-export function graphLD() {
+export function graphLD(locale: string = "en") {
   return {
     "@context": "https://schema.org",
-    "@graph": [localBusinessNode(), webSiteNode(), ...serviceNodes()],
+    "@graph": [localBusinessNode(), webSiteNode(locale), ...serviceNodes()],
   };
 }
 

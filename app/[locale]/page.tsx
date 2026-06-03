@@ -1,3 +1,6 @@
+import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
+import { routing, type AppLocale } from "@/i18n/routing";
 import { Nav } from "@/components/sections/nav";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
@@ -10,7 +13,15 @@ import { Buyers } from "@/components/sections/buyers";
 import { LeadTimesContact } from "@/components/sections/lead-times-contact";
 import { Footer } from "@/components/sections/footer";
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!(routing.locales as readonly string[]).includes(locale)) notFound();
+  setRequestLocale(locale as AppLocale);
+
   return (
     <>
       <Nav />

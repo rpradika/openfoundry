@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { blueprint } from "@/lib/blueprint";
+import { LanguageSwitcher } from "./language-switcher";
 
 const NAV_ANCHORS: Record<string, string> = {
   "what we do": "#about",
@@ -34,6 +36,7 @@ function ChevronDown() {
 }
 
 export function Nav() {
+  const t = useTranslations("nav");
   const { logoUrl } = blueprint.brand;
   const companyName = blueprint.company.name;
   const labels = blueprint.navLinks ?? [];
@@ -78,12 +81,15 @@ export function Nav() {
         ))}
       </ul>
 
-      <a
-        href="#contact"
-        className="whitespace-nowrap rounded-full bg-brand px-4.5 py-2 text-[12.5px] font-semibold text-white transition-opacity hover:opacity-[0.88]"
-      >
-        Get in Touch
-      </a>
+      <div className="flex items-center gap-4">
+        <LanguageSwitcher />
+        <a
+          href="#contact"
+          className="whitespace-nowrap rounded-full bg-brand px-4.5 py-2 text-[12.5px] font-semibold text-white transition-opacity hover:opacity-[0.88]"
+        >
+          {t("getInTouch")}
+        </a>
+      </div>
     </nav>
   );
 }

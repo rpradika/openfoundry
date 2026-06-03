@@ -1,19 +1,16 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { blueprint } from "@/lib/blueprint";
 
-const FOOTER_TAGLINE =
-  "Structured supplier information — capability, quality evidence and contact — organised the way procurement teams expect.";
-const PROVENANCE_TEXT =
-  "Inferred from publicly available evidence and verified with you during onboarding. These are typically the fields where suppliers unlock the most buyer trust — we quantify them together from your production data.";
-
 const COMPANY_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Quality", href: "#quality" },
-  { label: "Contact", href: "#contact" },
-];
+  { key: "about", href: "#about" },
+  { key: "capabilities", href: "#capabilities" },
+  { key: "quality", href: "#quality" },
+  { key: "contact", href: "#contact" },
+] as const;
 
 export function Footer() {
+  const t = useTranslations("footer");
   const { logoUrl } = blueprint.brand;
   const companyName = blueprint.company.name;
   const contact = blueprint.contactDetails;
@@ -37,14 +34,14 @@ export function Footer() {
               </div>
             )}
             <p className="mt-2.5 max-w-[320px] text-[12px] leading-[1.7] text-white/45">
-              {FOOTER_TAGLINE}
+              {t("tagline")}
             </p>
           </div>
 
           {contact && (
             <div>
               <div className="mb-3.5 font-mono text-[10px] uppercase tracking-[0.2em] text-white/[0.38]">
-                Contact
+                {t("sectionContact")}
               </div>
               <div className="grid gap-2.5 text-[12px] text-white/55">
                 {contact.address && <div>{contact.address}</div>}
@@ -63,16 +60,16 @@ export function Footer() {
 
           <div>
             <div className="mb-3.5 font-mono text-[10px] uppercase tracking-[0.2em] text-white/[0.38]">
-              Company
+              {t("sectionCompany")}
             </div>
             <ul className="grid gap-2.5">
               {COMPANY_LINKS.map((l) => (
-                <li key={l.label}>
+                <li key={l.key}>
                   <a
                     href={l.href}
                     className="text-[12px] text-white/55 transition-colors hover:text-white/85"
                   >
-                    {l.label}
+                    {t(`links.${l.key}`)}
                   </a>
                 </li>
               ))}
@@ -82,10 +79,10 @@ export function Footer() {
 
         <div className="flex flex-wrap items-baseline gap-2.5 border-t border-white/[0.07] pt-5">
           <span className="flex-shrink-0 font-mono text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55">
-            Values marked with *
+            {t("valuesMarkedWith")}
           </span>
           <p className="max-w-[600px] text-[11px] leading-[1.7] text-white/[0.38]">
-            {PROVENANCE_TEXT}
+            {t("provenance")}
           </p>
         </div>
       </div>

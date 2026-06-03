@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "getInTouch": "Get in Touch"
+  },
+  "footer": {
+    "tagline": "Structured supplier information — capability, quality evidence and contact — organised the way procurement teams expect.",
+    "provenance": "Inferred from publicly available evidence and verified with you during onboarding. These are typically the fields where suppliers unlock the most buyer trust — we quantify them together from your production data.",
+    "sectionContact": "Contact",
+    "sectionCompany": "Company",
+    "valuesMarkedWith": "Values marked with *",
+    "links": {
+      "about": "About",
+      "capabilities": "Capabilities",
+      "quality": "Quality",
+      "contact": "Contact"
+    }
+  },
+  "contact": {
+    "leadTimesEyebrow": "Lead times & capacity",
+    "typeColumn": "Type",
+    "durationColumn": "Duration",
+    "orReachOutDirectly": "Or reach out directly",
+    "getInTouchEyebrow": "Get in touch"
+  },
+  "rfq": {
+    "ctaSend": "Send RFQ",
+    "sending": "Sending…",
+    "receivedHeading": "Received",
+    "receivedBody": "Thanks — our team will respond within 24–48 hours.",
+    "label": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "phoneOptional": "(optional)",
+      "project": "Project"
+    },
+    "projectPlaceholder": "Parts, processes, materials, target volumes, target timeline…",
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailInvalid": "Enter a valid email",
+      "companyRequired": "Company is required",
+      "projectMin": "Tell us a bit more about the project (20+ characters)",
+      "sendFailed": "Send failed",
+      "networkError": "Network error"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "vi": "Tiếng Việt"
+  }
+}

@@ -8,6 +8,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
+      alternates: {
+        languages: {
+          en: SITE_URL,
+          vi: `${SITE_URL}/vi`,
+          "x-default": SITE_URL,
+        },
+      },
     },
   ];
 }
