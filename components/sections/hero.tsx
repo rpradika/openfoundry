@@ -11,9 +11,7 @@ export function Hero() {
   const secondary = blueprint.heroCtas?.secondary ?? blueprint.secondaryCtaLabel;
   const badges = blueprint.topTrustBadges ?? [];
   const stats = blueprint.topProofStats ?? blueprint.stats ?? [];
-  const heroImage =
-    blueprint.templateSlots?.heroImages?.find((h) => h.likelyUsableAsHero) ??
-    blueprint.templateSlots?.heroImages?.[0];
+  const heroImage = { url: "/images/hero/factory-exterior.jpg" };
 
   return (
     <section
@@ -27,12 +25,12 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="absolute inset-0 object-cover object-center opacity-[0.42]"
+          className="absolute inset-0 object-cover object-center opacity-[0.65]"
         />
       )}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,15,28,0.62)_0%,rgba(10,15,28,0.82)_60%,rgba(10,15,28,0.96)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,15,28,0.35)_0%,rgba(10,15,28,0.55)_45%,rgba(10,15,28,0.9)_100%)]"
       />
 
       <div className="relative max-w-[900px] px-5 pt-18 pb-16 md:px-12 md:pt-18 md:pb-16">
