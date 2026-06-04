@@ -31,6 +31,7 @@ export interface Capability {
   summary: string;
   pdfBullets?: string[];
   specItems?: string[];
+  imageUrl?: string;
   provenance: Provenance;
 }
 

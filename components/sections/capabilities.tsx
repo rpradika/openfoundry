@@ -3,17 +3,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { getBlueprint } from "@/lib/blueprint";
 import { SectionHeader } from "./section-header";
 
-const CAPABILITY_IMAGE_MAP: Record<string, string> = {
-  "CNC Machining": "/images/process/aluminum-extrusion-6.jpg",
-  "Casting": "/images/highlights/investment-casting.jpg",
-  "Sheet Metal Fabrication": "/images/process/stamping-1.jpg",
-  "Welding & Assembly": "/images/process/aluminum-extrusion-4.jpg",
-  "Đúc": "/images/highlights/investment-casting.jpg",
-  "Gia công CNC": "/images/process/aluminum-extrusion-6.jpg",
-  "Gia công kim loại tấm": "/images/process/stamping-1.jpg",
-  "Hàn & lắp ráp": "/images/process/aluminum-extrusion-4.jpg",
-};
-
 const CAP_IMAGE_FALLBACK = "/images/process/powder-metallurgy-4.jpg";
 
 function CheckIcon() {
@@ -65,7 +54,7 @@ export function Capabilities() {
               >
                 <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0f1830]">
                   <Image
-                    src={CAPABILITY_IMAGE_MAP[c.name] ?? CAP_IMAGE_FALLBACK}
+                    src={c.imageUrl ?? CAP_IMAGE_FALLBACK}
                     alt={c.name}
                     fill
                     sizes="(min-width:768px) 540px, 100vw"
