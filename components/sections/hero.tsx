@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useLocale } from "next-intl";
 import { getBlueprint } from "@/lib/blueprint";
 
@@ -11,23 +10,24 @@ export function Hero() {
   const secondary = blueprint.heroCtas?.secondary ?? blueprint.secondaryCtaLabel;
   const badges = blueprint.topTrustBadges ?? [];
   const stats = blueprint.topProofStats ?? blueprint.stats ?? [];
-  const heroImage = { url: "/images/hero/factory-exterior.jpg" };
 
   return (
     <section
       id="hero"
       className="relative flex min-h-[92vh] flex-col justify-end overflow-hidden bg-bg-hero"
     >
-      {heroImage?.url && (
-        <Image
-          src={heroImage.url}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="absolute inset-0 object-cover object-center opacity-[0.65]"
-        />
-      )}
+      <video
+        aria-hidden
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/images/hero/factory-exterior.jpg"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.65]"
+      >
+        <source src="/stock-heroes/vcuinter.mp4" type="video/mp4" />
+      </video>
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,15,28,0.35)_0%,rgba(10,15,28,0.55)_45%,rgba(10,15,28,0.9)_100%)]"
