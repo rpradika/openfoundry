@@ -7,6 +7,7 @@ export function LeadTimesContact() {
   const blueprint = getBlueprint(useLocale());
   const leadTimes = blueprint.leadTimes ?? [];
   const contactLine = blueprint.contactLine;
+  const contactEmail = blueprint.contactDetails?.email;
   const rfqChip = leadTimes[0]
     ? `${leadTimes[0].type}: ${leadTimes[0].duration}*`
     : null;
@@ -61,7 +62,7 @@ export function LeadTimesContact() {
 
           {/* Form */}
           <div>
-            <RfqForm />
+            <RfqForm to={contactEmail} />
           </div>
         </div>
       </div>

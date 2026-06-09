@@ -13,10 +13,10 @@ const inputClass =
   "w-full rounded-[15px] border border-border-soft bg-[color-mix(in_srgb,var(--color-bg-page)_92%,white_8%)] px-4 py-2.5 text-[13px] text-text-primary placeholder:text-text-muted focus:border-brand/40 focus:outline-none focus:ring-2 focus:ring-brand/15";
 const errorClass = "mt-1.5 text-[11px] text-brand";
 
-export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
+export function RfqForm({ ctaLabel, to }: { ctaLabel?: string; to?: string }) {
   const t = useTranslations("rfq");
   const [status, setStatus] = useState<Status>("idle");
-  const [serverError, setServerError] = useState<string | null>(null);
+  const recipient = to || "info@vcuinternational.com";
 
   const schema = useMemo(
     () =>
@@ -39,36 +39,37 @@ export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
     defaultValues: { name: "", email: "", company: "", phone: "", project: "", website: "" },
   });
 
-  async function onSubmit(values: RfqInput) {
-    setStatus("submitting");
-    setServerError(null);
-    try {
-      const res = await fetch("/api/rfq", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-      if (!res.ok) {
-        const data = (await res.json().catch(() => null)) as { error?: string } | null;
-        setServerError(data?.error ?? t("errors.sendFailed"));
-        setStatus("error");
-        return;
-      }
-      reset();
-      setStatus("success");
-    } catch {
-      setServerError(t("errors.networkError"));
-      setStatus("error");
-    }
+  function onSubmit(values: RfqInput) {
+    const subject = `Quote request — ${values.company}`;
+    const body = [
+      `Company: ${values.company}`,
+      `Contact: ${values.name}`,
+      `Email: ${values.email}`,
+      values.phone ? `Phone: ${values.phone}` : null,
+      "",
+      "Project details:",
+      values.project,
+    ]
+      .filter((line) => line !== null)
+      .join("\r\n");
+
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+
+    reset();
+    setStatus("success");
   }
 
   if (status === "success") {
     return (
       <div className="rounded-[16px] border border-border-soft bg-[color-mix(in_srgb,var(--color-bg-page)_95%,white_5%)] px-5 py-6">
         <div className="mb-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-brand">
-          {t("receivedHeading")}
+          {t("mailtoHeading")}
         </div>
-        <p className="text-[14px] text-text-secondary">{t("receivedBody")}</p>
+        <p className="text-[14px] text-text-secondary">
+          {t("mailtoBody", { email: recipient })}
+        </p>
       </div>
     );
   }
@@ -160,21 +161,15 @@ export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
 
       <button
         type="submit"
-        disabled={status === "submitting"}
-        className="group w-full rounded-[16px] bg-bg-hero px-6 py-4 text-center text-[15.5px] font-semibold text-white shadow-[0_18px_38px_rgba(15,23,42,0.18)] transition-transform duration-200 ease-out hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60"
+        className="group w-full rounded-[16px] bg-bg-hero px-6 py-4 text-center text-[15.5px] font-semibold text-white shadow-[0_18px_38px_rgba(15,23,42,0.18)] transition-transform duration-200 ease-out hover:scale-[1.01] active:scale-[0.99]"
       >
         <span className="inline-flex items-center justify-center gap-2">
-          {status === "submitting" ? t("sending") : (ctaLabel ?? t("ctaSend"))}
+          {ctaLabel ?? t("ctaSend")}
           <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-0.5">
             →
           </span>
         </span>
       </button>
-      {serverError && (
-        <p className={errorClass} role="alert">
-          {serverError}
-        </p>
-      )}
     </form>
   );
 }

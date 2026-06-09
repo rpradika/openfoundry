@@ -36,6 +36,8 @@
     "sending": "Đang gửi…",
     "receivedHeading": "Đã nhận",
     "receivedBody": "Cảm ơn — đội ngũ của chúng tôi sẽ phản hồi trong vòng 24–48 giờ.",
+    "mailtoHeading": "Đang mở ứng dụng email",
+    "mailtoBody": "Ứng dụng email của bạn sẽ mở với nội dung đã điền sẵn — chỉ cần nhấn gửi. Nếu không có gì xảy ra, hãy gửi email trực tiếp tới {email}.",
     "label": {
       "name": "Họ và tên",
       "company": "Tên công ty",

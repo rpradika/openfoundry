@@ -36,6 +36,8 @@
     "sending": "Sending…",
     "receivedHeading": "Received",
     "receivedBody": "Thanks — our team will respond within 24–48 hours.",
+    "mailtoHeading": "Opening your email app",
+    "mailtoBody": "Your email app should open with the details ready to send — just hit send. If nothing happens, email us directly at {email}.",
     "label": {
       "name": "Contact Name",
       "company": "Company Name",
