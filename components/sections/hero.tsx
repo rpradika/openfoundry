@@ -79,7 +79,7 @@ export function Hero() {
       />
 
       {/* Centered content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-24 pb-10 text-center sm:px-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-14">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 py-16 text-center sm:px-10 sm:py-20">
         <div className="mx-auto w-full max-w-4xl">
           <h1 className="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.08] tracking-[-0.028em] text-white sm:text-[38px] lg:text-[46px]">
             {headline}
