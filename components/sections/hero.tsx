@@ -35,7 +35,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative isolate h-[480px] overflow-hidden"
+      className="relative isolate flex-1 min-h-[460px] overflow-hidden"
       style={{ backgroundColor: "#07090d" }}
     >
       {HERO_SLIDES.map((src, i) => (

@@ -28,8 +28,11 @@ export default async function Home({
     <>
       <Nav />
       <main>
-        <Hero />
-        <CustomerLogos />
+        {/* Hero + trusted-by logos fill the first viewport together */}
+        <div className="flex min-h-svh flex-col">
+          <Hero />
+          <CustomerLogos />
+        </div>
         <About />
         <Capabilities />
         <MachinePark />
