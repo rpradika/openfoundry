@@ -88,6 +88,8 @@
     "machinePark": {
       "eyebrow": "Machine Park",
       "title": "Advanced Manufacturing",
+      "headline": "{count}+* documented production machines across {list}",
+      "andMore": "{items} and {n} more",
       "sourceNote": "from equipment documentation",
       "utilisation": "Utilisation",
       "viewSpecs": "View Full Specs",

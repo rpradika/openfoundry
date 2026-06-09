@@ -6,13 +6,14 @@ import { getBlueprint, type QualityKpi } from "@/lib/blueprint";
 
 type IconKind = "star" | "clock" | "check" | "bars" | "clipboard" | "trend";
 
+// Keyed on the locale-independent KPI id so icons stay correct in every language.
 const KPI_THEME: Record<string, { color: string; icon: IconKind }> = {
-  "Defect Rate": { color: "#10b981", icon: "star" },
-  "On-Time Delivery": { color: "#3b82f6", icon: "clock" },
-  "First Pass Yield": { color: "#06b6d4", icon: "check" },
-  "Process Cpk": { color: "#6366f1", icon: "bars" },
-  "Audit Score": { color: "#10b981", icon: "clipboard" },
-  "Customer Satisfaction": { color: "#8b5cf6", icon: "trend" },
+  "defect-rate": { color: "#10b981", icon: "star" },
+  "on-time-delivery": { color: "#3b82f6", icon: "clock" },
+  "first-pass-yield": { color: "#06b6d4", icon: "check" },
+  "process-cpk": { color: "#6366f1", icon: "bars" },
+  "audit-score": { color: "#10b981", icon: "clipboard" },
+  "customer-satisfaction": { color: "#8b5cf6", icon: "trend" },
 };
 const FALLBACK = { color: "#3b82f6", icon: "check" as IconKind };
 
@@ -104,7 +105,7 @@ export function QualityKpis() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {kpis.map((k) => {
-            const theme = KPI_THEME[k.label] ?? FALLBACK;
+            const theme = KPI_THEME[k.id] ?? FALLBACK;
             const status = STATUS_STYLE[k.status] ?? STATUS_STYLE.Improving;
             const value = k.numericValue.toFixed(k.decimals);
             const width = Math.max(0, Math.min(100, k.progressPct));

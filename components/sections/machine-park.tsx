@@ -18,13 +18,6 @@ function Arrow({ dir }: { dir: "left" | "right" }) {
   );
 }
 
-function machineHeadline(machineCount: number, labels: string[]): string {
-  const shown = labels.slice(0, 4);
-  const rest = labels.length - shown.length;
-  const list = rest > 0 ? `${shown.join(", ")} and ${rest} more` : shown.join(", ");
-  return `${machineCount}+* documented production machines across ${list}`;
-}
-
 export function MachinePark() {
   const blueprint = getBlueprint(useLocale());
   const t = useTranslations("sections.machinePark");
@@ -73,6 +66,13 @@ export function MachinePark() {
 
   const machineCount = meta.machineCount ?? cards.length;
   const labels = meta.categoryLabels ?? cards.map((c) => c.category);
+  const shownLabels = labels.slice(0, 4);
+  const restCount = labels.length - shownLabels.length;
+  const labelList =
+    restCount > 0
+      ? t("andMore", { items: shownLabels.join(", "), n: restCount })
+      : shownLabels.join(", ");
+  const headline = t("headline", { count: machineCount, list: labelList });
 
   const navBtn =
     "group flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.16] bg-white/[0.04] text-white/70 transition-colors hover:bg-white/10 hover:text-white";
@@ -125,7 +125,7 @@ export function MachinePark() {
           <div className="flex min-w-0 items-center gap-2.5">
             <span className="h-2 w-2 shrink-0 rounded-full bg-brand" />
             <span className="text-[11.5px] font-medium leading-snug text-white/[0.72]">
-              {machineHeadline(machineCount, labels)}
+              {headline}
             </span>
           </div>
           <span className="shrink-0 text-[9.5px] font-medium tracking-[0.02em] text-white/[0.32]">

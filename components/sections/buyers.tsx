@@ -1,6 +1,6 @@
 import { useLocale, useTranslations } from "next-intl";
 import { getBlueprint } from "@/lib/blueprint";
-import { BUYER_VERIFY, BUYER_CONFIDENCE } from "@/lib/buyers-content";
+import { getBuyerVerify, getBuyerConfidence } from "@/lib/buyers-content";
 
 function CheckIcon() {
   return (
@@ -22,9 +22,12 @@ function CheckIcon() {
 }
 
 export function Buyers() {
-  const blueprint = getBlueprint(useLocale());
+  const locale = useLocale();
+  const blueprint = getBlueprint(locale);
   const t = useTranslations("sections.buyers");
   const title = blueprint.whyChooseUsIntro ?? t("fallbackTitle");
+  const verify = getBuyerVerify(locale);
+  const confidence = getBuyerConfidence(locale);
 
   return (
     <section
@@ -55,7 +58,7 @@ export function Buyers() {
               {t("verifyHeading")}
             </div>
             <ul className="space-y-3.5">
-              {BUYER_VERIFY.map((item) => (
+              {verify.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <CheckIcon />
                   <span className="text-[13.5px] leading-[1.7] text-text-secondary">
@@ -72,7 +75,7 @@ export function Buyers() {
               {t("confidenceHeading")}
             </div>
             <dl className="space-y-5">
-              {BUYER_CONFIDENCE.map((c) => (
+              {confidence.map((c) => (
                 <div key={c.title}>
                   <dt className="text-[14px] font-semibold tracking-[-0.01em] text-text-primary">
                     {c.title}

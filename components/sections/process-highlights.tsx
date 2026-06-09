@@ -1,5 +1,5 @@
-import { useTranslations } from "next-intl";
-import { EVIDENCE_CARDS } from "@/lib/evidence-content";
+import { useLocale, useTranslations } from "next-intl";
+import { getEvidenceCards } from "@/lib/evidence-content";
 
 function DownloadIcon() {
   return (
@@ -17,8 +17,9 @@ function DownloadIcon() {
 
 export function ProcessHighlights() {
   const t = useTranslations("sections.processHighlights");
+  const cards = getEvidenceCards(useLocale());
 
-  if (EVIDENCE_CARDS.length === 0) return null;
+  if (cards.length === 0) return null;
 
   return (
     <section
@@ -43,7 +44,7 @@ export function ProcessHighlights() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {EVIDENCE_CARDS.map((card) => (
+          {cards.map((card) => (
             <article
               key={card.title}
               className="flex flex-col overflow-hidden rounded-[18px] border border-border-soft bg-white shadow-[0_2px_8px_rgba(15,23,42,0.04),0_1px_3px_rgba(15,23,42,0.06)]"

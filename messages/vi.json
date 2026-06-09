@@ -88,6 +88,8 @@
     "machinePark": {
       "eyebrow": "Hệ thống máy móc",
       "title": "Sản xuất tiên tiến",
+      "headline": "{count}+* máy sản xuất được tài liệu hoá trên {list}",
+      "andMore": "{items} và {n} khác",
       "sourceNote": "từ tài liệu thiết bị",
       "utilisation": "Công suất",
       "viewSpecs": "Xem thông số đầy đủ",

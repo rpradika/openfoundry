@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { getBlueprint } from "@/lib/blueprint";
-import { CAPABILITY_ITEMS } from "@/lib/capabilities-content";
+import { getCapabilityItems } from "@/lib/capabilities-content";
 
 function Star() {
   return (
@@ -37,9 +37,11 @@ function Chevron({ open }: { open: boolean }) {
 }
 
 export function Capabilities() {
-  const blueprint = getBlueprint(useLocale());
+  const locale = useLocale();
+  const blueprint = getBlueprint(locale);
   const t = useTranslations("sections.capabilities");
   const intro = blueprint.capabilityIntro;
+  const items = getCapabilityItems(locale);
 
   const [open, setOpen] = useState(0);
 
@@ -59,7 +61,7 @@ export function Capabilities() {
         </div>
 
         <ul className="mx-auto max-w-5xl border-t border-border-soft">
-          {CAPABILITY_ITEMS.map((c, idx) => {
+          {items.map((c, idx) => {
             const isOpen = open === idx;
             const rows = [
               { label: t("fields.processScope"), value: c.processScope },
