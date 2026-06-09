@@ -80,37 +80,37 @@ export function Hero() {
 
       {/* Centered content */}
       <div className="relative z-10 w-full px-6 py-16 text-center sm:px-10 sm:py-20">
-        <div className="mx-auto w-full max-w-4xl">
-          <h1 className="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.08] tracking-[-0.028em] text-white sm:text-[38px] lg:text-[46px]">
+        <div className="mx-auto w-full max-w-4xl lg:max-w-6xl">
+          <h1 className="mx-auto max-w-[24ch] text-[32px] font-semibold leading-[1.04] tracking-[-0.03em] text-white sm:text-[44px] lg:text-[60px] xl:text-[72px]">
             {headline}
           </h1>
 
-          <p className="mx-auto mt-5 max-w-[52ch] text-[15px] leading-[1.6] text-white/85 sm:text-[16.5px]">
+          <p className="mx-auto mt-5 max-w-[52ch] text-[15px] leading-[1.6] text-white/85 sm:text-[17px] lg:mt-7 lg:max-w-[58ch] lg:text-[21px]">
             {sub}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:mt-11 lg:gap-4">
             <a
               href="#contact"
-              className="rounded-full bg-brand px-6 py-3 text-[13px] font-semibold text-white shadow-[0_22px_44px_-18px_rgba(0,0,0,0.7)] transition-[transform,box-shadow] duration-[220ms] ease-out hover:scale-[1.02] hover:shadow-[0_28px_56px_-18px_rgba(0,0,0,0.78)] active:scale-[0.98]"
+              className="rounded-full bg-brand px-6 py-3 text-[13px] font-semibold text-white shadow-[0_22px_44px_-18px_rgba(0,0,0,0.7)] transition-[transform,box-shadow] duration-[220ms] ease-out hover:scale-[1.02] hover:shadow-[0_28px_56px_-18px_rgba(0,0,0,0.78)] active:scale-[0.98] lg:px-9 lg:py-4 lg:text-[16px]"
             >
               {primary}
             </a>
             <a
               href="#capabilities"
-              className="rounded-full border border-white/35 bg-white/[0.06] px-6 py-3 text-[13px] font-semibold text-white/90 backdrop-blur-[2px] transition-colors duration-[220ms] hover:border-white/55 hover:bg-white/[0.14]"
+              className="rounded-full border border-white/35 bg-white/[0.06] px-6 py-3 text-[13px] font-semibold text-white/90 backdrop-blur-[2px] transition-colors duration-[220ms] hover:border-white/55 hover:bg-white/[0.14] lg:px-9 lg:py-4 lg:text-[16px]"
             >
               {secondary}
             </a>
           </div>
 
           {badges.length > 0 && (
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-2 lg:mt-11 lg:gap-x-9">
               {badges.map((b, i) => (
                 <Fragment key={b}>
-                  {i > 0 && <span aria-hidden className="h-3 w-px bg-white/35" />}
-                  <span className="inline-flex items-center gap-1.5 text-[11.5px] font-medium text-white/85">
-                    <span aria-hidden className="h-1 w-1 rounded-full bg-brand" />
+                  {i > 0 && <span aria-hidden className="h-3 w-px bg-white/35 lg:h-4" />}
+                  <span className="inline-flex items-center gap-1.5 text-[11.5px] font-medium text-white/85 lg:gap-2 lg:text-[13.5px]">
+                    <span aria-hidden className="h-1 w-1 rounded-full bg-brand lg:h-1.5 lg:w-1.5" />
                     {b}
                   </span>
                 </Fragment>
