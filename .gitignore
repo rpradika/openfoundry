@@ -43,3 +43,10 @@ next-env.d.ts
 
 # QA screenshot artifacts (regenerable via scripts/qa-screenshots.mjs)
 /qa-shots/
+
+# Local QA / design-comparison scratch (not part of the app)
+/compare-shots/
+/public/compare.html
+/public/vcu-design/
+/scripts/compare-shots.mjs
+/scripts/verify-export-css.mjs

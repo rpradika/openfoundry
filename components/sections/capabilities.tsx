@@ -1,24 +1,34 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { getBlueprint } from "@/lib/blueprint";
-import { SectionHeader } from "./section-header";
+import { CAPABILITY_ITEMS } from "@/lib/capabilities-content";
 
-const CAP_IMAGE_FALLBACK = "/images/process/powder-metallurgy-4.jpg";
+function Star() {
+  return (
+    <span aria-hidden className="ml-0.5 text-text-muted">
+      *
+    </span>
+  );
+}
 
-function CheckIcon() {
+function Chevron({ open }: { open: boolean }) {
   return (
     <svg
-      width="10"
-      height="10"
-      viewBox="0 0 12 12"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
       fill="none"
       aria-hidden="true"
-      className="mt-[5px] flex-shrink-0 text-brand"
+      className={`flex-shrink-0 text-text-muted transition-transform duration-300 ${
+        open ? "rotate-180 text-brand" : ""
+      }`}
     >
       <path
-        d="M2 6.5L4.5 9L10 3"
+        d="M4 6l4 4 4-4"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -29,119 +39,140 @@ function CheckIcon() {
 export function Capabilities() {
   const blueprint = getBlueprint(useLocale());
   const t = useTranslations("sections.capabilities");
-  const featured = blueprint.capabilities.slice(0, 4);
-  const additional = blueprint.additionalCapabilities ?? [];
   const intro = blueprint.capabilityIntro;
 
+  const [open, setOpen] = useState(0);
+
   return (
-    <section
-      id="capabilities"
-      className="border-b border-border-soft bg-bg-surface"
-    >
-      <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
-        <SectionHeader
-          eyebrow={t("eyebrow")}
-          title={t("title")}
-          intro={intro}
-        />
-
-        {featured.length > 0 && (
-          <div className="mb-10 grid gap-5 md:grid-cols-2">
-            {featured.map((c, idx) => (
-              <article
-                key={c.name}
-                className="group relative flex flex-col overflow-hidden border border-border-soft bg-bg-surface transition-all hover:border-brand/40 hover:shadow-[0_12px_28px_rgba(15,23,42,0.07)]"
-              >
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0f1830]">
-                  <Image
-                    src={c.imageUrl ?? CAP_IMAGE_FALLBACK}
-                    alt={c.name}
-                    fill
-                    sizes="(min-width:768px) 540px, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
-                  />
-                  <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/55 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-white/90 backdrop-blur">
-                    {String(idx + 1).padStart(2, "0")} · {t("capabilityLabel")}
-                  </div>
-                </div>
-
-                <div className="flex flex-1 flex-col gap-3.5 px-5 py-5 md:px-6">
-                  <div>
-                    <h3 className="text-[18px] font-semibold tracking-[-0.025em] text-text-primary">
-                      {c.name}
-                    </h3>
-                    {c.spec && (
-                      <div className="mt-0.5 font-mono text-[10px] text-brand">
-                        {c.spec}
-                      </div>
-                    )}
-                  </div>
-
-                  {c.summary && (
-                    <p className="text-[13px] leading-[1.65] text-text-secondary">
-                      {c.summary}
-                    </p>
-                  )}
-
-                  {c.specItems && c.specItems.length > 0 && (
-                    <ul className="grid gap-1.5 border-t border-border-soft pt-3.5">
-                      {c.specItems.map((item) => (
-                        <li
-                          key={item}
-                          className="flex gap-2 text-[12.5px] leading-[1.55] text-text-secondary"
-                        >
-                          <CheckIcon />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {c.pdfBullets && c.pdfBullets.length > 0 && (
-                    <div className="mt-auto pt-2">
-                      <div className="mb-2 font-mono text-[9px] font-semibold uppercase tracking-[0.22em] text-text-muted">
-                        {t("qualityProof")}
-                      </div>
-                      <ul className="flex flex-wrap gap-1.5">
-                        {c.pdfBullets.map((b) => (
-                          <li
-                            key={b}
-                            className="rounded-full border border-brand/25 bg-brand/[0.06] px-2.5 py-1 font-mono text-[9.5px] uppercase tracking-[0.12em] text-brand"
-                          >
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              </article>
-            ))}
+    <section id="capabilities" className="border-b border-border-soft bg-bg-page">
+      <div className="mx-auto max-w-[1100px] px-5 py-20 md:px-12 lg:py-24">
+        <div className="mx-auto mb-10 max-w-3xl text-center lg:mb-14">
+          <div className="mb-5 text-[11px] font-semibold uppercase tracking-[0.26em] text-brand">
+            {t("eyebrow")}
           </div>
-        )}
+          <h2 className="text-[34px] font-semibold leading-[1.02] tracking-[-0.045em] text-text-primary sm:text-[44px] lg:text-[52px]">
+            {t("title")}
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-[1.65] text-text-secondary sm:text-[17px]">
+            {intro}
+          </p>
+        </div>
 
-        {additional.length > 0 && (
-          <div>
-            <div className="mb-3.5 flex items-center gap-3 font-mono text-[9.5px] font-semibold uppercase tracking-[0.22em] text-text-muted">
-              <span className="inline-block h-px w-6 bg-border-soft" />
-              {t("alsoAvailable")}
-            </div>
-            <ul className="flex flex-wrap gap-2">
-              {additional.map((name) => (
-                <li
-                  key={name}
-                  className="border border-border-soft bg-bg-surface px-3.5 py-1.5 text-[11.5px] font-medium tracking-[-0.005em] text-text-secondary transition-colors hover:border-brand/40 hover:text-text-primary"
+        <ul className="mx-auto max-w-5xl border-t border-border-soft">
+          {CAPABILITY_ITEMS.map((c, idx) => {
+            const isOpen = open === idx;
+            const rows = [
+              { label: t("fields.processScope"), value: c.processScope },
+              { label: t("fields.materials"), value: c.materials },
+              { label: t("fields.tolerances"), value: c.tolerances },
+              { label: t("fields.inspection"), value: c.inspection },
+              { label: t("fields.productionScale"), value: c.productionScale },
+            ];
+            return (
+              <li key={c.name} className="border-b border-border-soft">
+                <h3>
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : idx)}
+                    aria-expanded={isOpen}
+                    className="group flex w-full items-center gap-4 py-5 text-left"
+                  >
+                    <span className="font-mono text-[11px] tabular-nums text-text-muted">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <span className="flex flex-1 flex-col gap-0.5 md:flex-row md:items-baseline md:gap-3">
+                      <span
+                        className={`text-[18px] font-semibold tracking-[-0.025em] transition-colors group-hover:text-brand md:text-[20px] ${
+                          isOpen ? "text-brand" : "text-text-primary"
+                        }`}
+                      >
+                        {c.name}
+                      </span>
+                      <span className="line-clamp-1 text-[12.5px] leading-[1.5] text-text-secondary">
+                        {c.summary}
+                      </span>
+                    </span>
+                    <Chevron open={isOpen} />
+                  </button>
+                </h3>
+
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
                 >
-                  {name}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+                  <div className="overflow-hidden">
+                    <div className="grid gap-6 pb-7 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-8">
+                      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[12px] bg-[#0f1830] shadow-[0_14px_30px_-24px_rgba(15,23,42,0.22)] lg:order-2">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={c.image}
+                          alt={c.name}
+                          loading="lazy"
+                          draggable={false}
+                          className="absolute inset-0 h-full w-full object-cover"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-5 lg:order-1">
+                        <p className="text-[14px] leading-[1.7] text-text-secondary">
+                          {c.summary}
+                        </p>
+
+                        <dl className="grid gap-x-6 gap-y-2.5 [grid-template-columns:minmax(120px,auto)_1fr]">
+                          {rows.map((r) => (
+                            <div key={r.label} className="contents">
+                              <dt className="text-[12.5px] font-medium text-text-muted">
+                                {r.label}
+                              </dt>
+                              <dd className="text-[13.5px] leading-[1.55] text-text-primary">
+                                {r.value}
+                                <Star />
+                              </dd>
+                            </div>
+                          ))}
+                          <dt className="text-[12.5px] font-medium text-text-muted">
+                            {t("fields.typicalApplications")}
+                          </dt>
+                          <dd className="text-[13.5px] leading-[1.55] text-text-primary">
+                            <ul className="grid gap-1">
+                              {c.applications.map((a) => (
+                                <li key={a}>
+                                  {a}
+                                  <Star />
+                                </li>
+                              ))}
+                            </ul>
+                          </dd>
+                        </dl>
+
+                        <p className="text-[11px] text-text-muted">
+                          <Star /> {t("onboardingNote")}
+                        </p>
+
+                        <a
+                          href="#contact"
+                          className="inline-flex items-center gap-1.5 self-start font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-brand transition-opacity hover:opacity-70"
+                        >
+                          {t("discussCapability")}
+                          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path
+                              d="M6 3l5 5-5 5"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );

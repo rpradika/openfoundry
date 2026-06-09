@@ -5,7 +5,8 @@
       "whatWeDo": "What We Do",
       "capabilities": "Capabilities",
       "services": "Services",
-      "contact": "Contact"
+      "contact": "Contact",
+      "company": "Company"
     }
   },
   "footer": {
@@ -22,6 +23,8 @@
     }
   },
   "contact": {
+    "eyebrow": "Request a quote",
+    "heading": "Send us the drawing. We'll come back with a quote.",
     "leadTimesEyebrow": "Lead times & capacity",
     "typeColumn": "Type",
     "durationColumn": "Duration",
@@ -34,12 +37,18 @@
     "receivedHeading": "Received",
     "receivedBody": "Thanks — our team will respond within 24–48 hours.",
     "label": {
-      "name": "Name",
-      "company": "Company",
-      "email": "Email",
-      "phone": "Phone",
+      "name": "Contact Name",
+      "company": "Company Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
       "phoneOptional": "(optional)",
-      "project": "Project"
+      "project": "Project details"
+    },
+    "placeholder": {
+      "name": "Your full name",
+      "company": "Your company name",
+      "email": "email@company.com",
+      "phone": "+1 (555) 000-0000"
     },
     "projectPlaceholder": "Parts, processes, materials, target volumes, target timeline…",
     "errors": {
@@ -59,24 +68,55 @@
   "sections": {
     "about": {
       "eyebrow": "About {company}",
-      "tileLabels": {
+      "paragraph1": "VCU International is an IATF 16949 and ISO 9001 certified manufacturer delivering precision metal and polymer components for global OEM programmes. With 16+ years of export experience across Vietnam and China, we support customers from prototype through to high-volume production.",
+      "paragraph2": "Our integrated capabilities span CNC machining, casting, stamping, and injection moulding, supported by in-house CMM inspection and ERP-driven quality control. A single point of contact ensures consistency from initial design through to repeat delivery.",
+      "body": "Trusted by global OEMs across automotive, aerospace, and industrial sectors.",
+      "stats": {
         "capabilityAreas": "Capability Areas",
+        "capabilityAreasSub": "Core manufacturing coverage",
         "accreditations": "Accreditations",
-        "primaryCert": "Primary cert",
-        "industry": "Industry"
-      },
-      "buyerChallengeEyebrow": "Why this matters"
+        "accreditationsSub": "Verified standards",
+        "industriesServed": "Industries Served",
+        "industriesServedSub": "Supported sectors",
+        "qualityAnchor": "Quality Anchor"
+      }
     },
     "customerLogos": {
-      "eyebrow": "Trusted by",
+      "eyebrow": "Trusted by teams at",
       "intro": "Long-running supply relationships across Automotive, Defence and Marine programmes."
+    },
+    "machinePark": {
+      "eyebrow": "Machine Park",
+      "title": "Advanced Manufacturing",
+      "sourceNote": "from equipment documentation",
+      "utilisation": "Utilisation",
+      "viewSpecs": "View Full Specs",
+      "of": "of",
+      "prev": "Previous machines",
+      "next": "Next machines",
+      "specs": {
+        "axes": "Axes / Config",
+        "envelope": "Work Envelope",
+        "tolerance": "Tolerance"
+      }
     },
     "capabilities": {
       "eyebrow": "What we do",
       "title": "Manufacturing capabilities",
       "capabilityLabel": "Capability",
       "qualityProof": "Quality proof",
-      "alsoAvailable": "Also available"
+      "alsoAvailable": "Also available",
+      "detailsLabel": "Capability details",
+      "discussCapability": "Discuss this capability",
+      "onboardingNote": "To be quantified during supplier onboarding.",
+      "fields": {
+        "processScope": "Process scope",
+        "materials": "Materials",
+        "tolerances": "Tolerances",
+        "inspection": "Inspection",
+        "productionScale": "Production scale",
+        "typicalApplications": "Typical applications"
+      }
     },
     "materials": {
       "eyebrow": "Materials expertise",
@@ -88,8 +128,10 @@
       "proofLabel": "Quality proof"
     },
     "qualityKpis": {
-      "eyebrow": "Quality systems excellence",
-      "title": "Performance metrics"
+      "eyebrow": "Quality Systems Excellence",
+      "title": "Performance metrics",
+      "intro": "Real-time performance metrics from our integrated QMS",
+      "footnote": "* Inferred from public evidence. Quantified with your team during onboarding."
     },
     "programmeDelivery": {
       "eyebrow": "Programme delivery",
@@ -99,12 +141,15 @@
     },
     "buyers": {
       "eyebrow": "Why buyers choose this supplier",
-      "fallbackTitle": "What buyers get in practice"
+      "fallbackTitle": "What buyers get in practice",
+      "subtitle": "A single accountable technical interface from RFQ through repeat supply — with documented process routes and inspection aligned to OEM acceptance criteria.",
+      "verifyHeading": "What buyers can verify",
+      "confidenceHeading": "Confidence signals"
     },
     "processHighlights": {
-      "eyebrow": "Process highlights",
-      "title": "Programmes documented in process briefs",
-      "intro": "Download the technical brief for each programme — parts geometry, materials, KPI evidence and qualification routes.",
+      "eyebrow": "Evidence",
+      "title": "Programmes we've delivered",
+      "intro": "A small sample of parts carried from drawing through to repeat delivery — the detail your engineers will care about.",
       "downloadPdf": "Download brief"
     }
   }

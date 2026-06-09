@@ -1,91 +1,142 @@
+"use client";
+
+import { Fragment, useEffect, useState } from "react";
 import { useLocale } from "next-intl";
 import { getBlueprint } from "@/lib/blueprint";
 
+// Hero carousel slides — sourced from the openfoundry.app preview, in its order.
+const HERO_SLIDES = [
+  "/stock-heroes/cnc-1.webp",
+  "/stock-heroes/sheet-metal-2.jpg",
+  "/stock-heroes/sheet-metal-1.webp",
+];
+
+const ROTATE_MS = 5000;
+
 export function Hero() {
   const blueprint = getBlueprint(useLocale());
-  const eyebrow = blueprint.heroEyebrow;
   const headline = blueprint.heroHeadline;
   const sub = blueprint.heroSubheadline;
   const primary = blueprint.heroCtas?.primary ?? blueprint.primaryCtaLabel;
   const secondary = blueprint.heroCtas?.secondary ?? blueprint.secondaryCtaLabel;
-  const badges = blueprint.topTrustBadges ?? [];
-  const stats = blueprint.topProofStats ?? blueprint.stats ?? [];
+  const badges = (blueprint.topTrustBadges ?? []).slice(0, 3);
+
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (HERO_SLIDES.length <= 1) return;
+    const id = setInterval(
+      () => setActive((i) => (i + 1) % HERO_SLIDES.length),
+      ROTATE_MS,
+    );
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section
       id="hero"
-      className="relative flex min-h-[92vh] flex-col justify-end overflow-hidden bg-bg-hero"
+      className="relative isolate h-[480px] overflow-hidden"
+      style={{ backgroundColor: "#07090d" }}
     >
-      <video
-        aria-hidden
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/images/hero/factory-exterior.jpg"
-        className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.65]"
-      >
-        <source src="/stock-heroes/vcuinter.mp4" type="video/mp4" />
-      </video>
+      {HERO_SLIDES.map((src, i) => (
+        <div
+          key={src}
+          aria-hidden
+          className="absolute inset-0 transition-opacity duration-[1200ms] ease-in-out"
+          style={{
+            backgroundImage: `url(${src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: i === active ? 1 : 0,
+          }}
+        />
+      ))}
+
+      {/* Gradient overlays (match preview) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,15,28,0.35)_0%,rgba(10,15,28,0.55)_45%,rgba(10,15,28,0.9)_100%)]"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(6,10,18,0.55) 0%, rgba(6,10,18,0.28) 35%, rgba(6,10,18,0.38) 70%, rgba(6,10,18,0.72) 100%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(6,10,18,0) 38%, rgba(6,10,18,0.48) 100%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-36"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(6,10,18,0.55) 0%, rgba(6,10,18,0.22) 55%, rgba(6,10,18,0) 100%)",
+        }}
       />
 
-      <div className="relative max-w-[900px] px-5 pt-18 pb-16 md:px-12 md:pt-18 md:pb-16">
-        <div className="mb-5 font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-white/[0.55]">
-          {eyebrow}
-        </div>
+      {/* Centered content */}
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-24 pb-10 text-center sm:px-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-14">
+        <div className="mx-auto w-full max-w-4xl">
+          <h1 className="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.08] tracking-[-0.028em] text-white sm:text-[38px] lg:text-[46px]">
+            {headline}
+          </h1>
 
-        <h1 className="mb-5 text-[clamp(36px,5vw,64px)] font-bold leading-[0.97] tracking-[-0.05em] text-white">
-          {headline}
-        </h1>
+          <p className="mx-auto mt-5 max-w-[52ch] text-[15px] leading-[1.6] text-white/85 sm:text-[16.5px]">
+            {sub}
+          </p>
 
-        <p className="mb-9 max-w-[560px] text-[clamp(15px,1.8vw,18px)] leading-[1.55] text-white/70">
-          {sub}
-        </p>
-
-        <div className="mb-12 flex flex-wrap gap-3">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-brand px-7 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-[0.88]"
-          >
-            {primary}
-          </a>
-          <a
-            href="#capabilities"
-            className="inline-flex items-center gap-2 border border-white/[0.28] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:border-white/60"
-          >
-            {secondary}
-          </a>
-        </div>
-
-        {stats.length > 0 && (
-          <div className="flex flex-wrap border-t border-white/[0.12]">
-            {stats.map((s) => (
-              <div key={s.label} className="mr-6 py-4 pr-6">
-                <div className="text-[22px] font-bold tracking-[-0.04em] text-white">
-                  {s.value}
-                </div>
-                <div className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-white/[0.48]">
-                  {s.label}
-                </div>
-              </div>
-            ))}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="#contact"
+              className="rounded-full bg-brand px-6 py-3 text-[13px] font-semibold text-white shadow-[0_22px_44px_-18px_rgba(0,0,0,0.7)] transition-[transform,box-shadow] duration-[220ms] ease-out hover:scale-[1.02] hover:shadow-[0_28px_56px_-18px_rgba(0,0,0,0.78)] active:scale-[0.98]"
+            >
+              {primary}
+            </a>
+            <a
+              href="#capabilities"
+              className="rounded-full border border-white/35 bg-white/[0.06] px-6 py-3 text-[13px] font-semibold text-white/90 backdrop-blur-[2px] transition-colors duration-[220ms] hover:border-white/55 hover:bg-white/[0.14]"
+            >
+              {secondary}
+            </a>
           </div>
-        )}
+
+          {badges.length > 0 && (
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
+              {badges.map((b, i) => (
+                <Fragment key={b}>
+                  {i > 0 && <span aria-hidden className="h-3 w-px bg-white/35" />}
+                  <span className="inline-flex items-center gap-1.5 text-[11.5px] font-medium text-white/85">
+                    <span aria-hidden className="h-1 w-1 rounded-full bg-brand" />
+                    {b}
+                  </span>
+                </Fragment>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
-      {badges.length > 0 && (
-        <div className="absolute right-12 bottom-16 hidden flex-col items-end gap-2 md:flex">
-          {badges.slice(0, 3).map((b) => (
-            <span
-              key={b}
-              className="rounded-full border border-white/[0.15] bg-white/[0.09] px-3.5 py-1.5 text-[10.5px] font-medium text-white/[0.88] backdrop-blur"
-            >
-              {b}
-            </span>
+      {/* Carousel indicators */}
+      {HERO_SLIDES.length > 1 && (
+        <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-1.5">
+          {HERO_SLIDES.map((src, i) => (
+            <button
+              key={src}
+              type="button"
+              aria-label={`Show hero image ${i + 1} of ${HERO_SLIDES.length}`}
+              aria-current={i === active}
+              onClick={() => setActive(i)}
+              className="h-[3px] rounded-full transition-all duration-500 ease-out"
+              style={{
+                width: i === active ? 22 : 8,
+                backgroundColor:
+                  i === active ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.38)",
+              }}
+            />
           ))}
         </div>
       )}

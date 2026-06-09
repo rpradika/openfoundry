@@ -3,23 +3,18 @@
     "name": "Vcuinternational",
     "headline": "Multi-Process Manufacturing",
     "tagline": "Serving Automotive applications",
-    "about": "Vcuinternational supports Automotive and Defence supply with multi-process manufacturing support, backed by IATF 16949 and ISO 9001:2015."
+    "about": "End-to-end precision manufacturing for OEM programmes"
   },
   "heroEyebrow": "Automotive and Defence Supply",
-  "heroHeadline": "Precision manufacturing for Automotive and Defence programmes.",
-  "heroSubheadline": "Supporting Automotive and Defence supply with IATF 16949 and cmm inspection.",
+  "heroHeadline": "Built for precision. Scaled for production.",
+  "heroSubheadline": "IATF 16949 certified. Metals and polymers. Automotive and defence.",
   "heroCtas": {
     "primary": "Request a Quote",
     "secondary": "View Capabilities"
   },
   "primaryCtaLabel": "Request a Quote",
   "secondaryCtaLabel": "View Capabilities",
-  "topTrustBadges": [
-    "IATF 16949",
-    "Automotive supply",
-    "Prototype to production",
-    "CMM Inspection"
-  ],
+  "topTrustBadges": ["IATF 16949 certified", "10+ processes", "Export-ready"],
   "topProofStats": [
     {
       "label": "Capability Areas",
@@ -36,7 +31,7 @@
   ],
   "capabilityIntro": "CNC Machining, Casting, Sheet Metal Fabrication run in-house, with documented experience across Aluminium, Steel.",
   "industryIntro": "Manufacturing support aligned to Automotive, Defence, Marine, with capability across CNC Machining, Casting.",
-  "whyChooseUsIntro": "What buyers get in practice: a shorter path to qualification, a narrower set of suppliers to manage, and fewer unknowns at launch.",
+  "whyChooseUsIntro": "Fewer handovers. Less programme risk.",
   "additionalCapabilities": [
     "Investment Casting",
     "Sand Casting",
@@ -76,7 +71,7 @@
   ],
   "buyerChallengeTeaser": {
     "title": "Stay with one supplier from first sample to repeat supply.",
-    "summary": "Keep the same technical contact, the same quality baseline, and the same production route from validation through volume — no mid-programme re-qualification."
+    "summary": "Keep the same technical contact, the same quality baseline, and the same production route from validation through volume â€” no mid-programme re-qualification."
   },
   "recommendationDrivenUpgrades": [],
   "stats": [
@@ -328,61 +323,61 @@
   ],
   "customerLogos": [
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/a09e01b69a7b052b2b1b538530b20079.jpeg",
+      "url": "/images/customers/a09e01b69a7b052b2b1b538530b20079.png",
       "name": "A09e01b69a7b052b2b1b538530b20079",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/22fe3910210f72c92a0d46875f752473.png",
+      "url": "/images/customers/22fe3910210f72c92a0d46875f752473.png",
       "name": "22fe3910210f72c92a0d46875f752473",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/e55b2646925156b02ff7a71232acd7b0.png",
+      "url": "/images/customers/e55b2646925156b02ff7a71232acd7b0.png",
       "name": "E55b2646925156b02ff7a71232acd7b0",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/cfa27aed5a6ce0dfebb8a4a10e8d92d1.png",
+      "url": "/images/customers/cfa27aed5a6ce0dfebb8a4a10e8d92d1.png",
       "name": "Cfa27aed5a6ce0dfebb8a4a10e8d92d1",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/1c2af883fb57d19492cfca4b40322202.png",
+      "url": "/images/customers/1c2af883fb57d19492cfca4b40322202.png",
       "name": "1c2af883fb57d19492cfca4b40322202",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/afbf14f396f88d2560d82c870737653d.png",
+      "url": "/images/customers/afbf14f396f88d2560d82c870737653d.png",
       "name": "Afbf14f396f88d2560d82c870737653d",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/eaca460f007adbec1e6462894d2f0724.png",
+      "url": "/images/customers/eaca460f007adbec1e6462894d2f0724.png",
       "name": "Eaca460f007adbec1e6462894d2f0724",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/a4b8e1b11f5a7cc14eb813d1b7fb5ea5.png",
+      "url": "/images/customers/a4b8e1b11f5a7cc14eb813d1b7fb5ea5.png",
       "name": "A4b8e1b11f5a7cc14eb813d1b7fb5ea5",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/b3cfc0d823f691f550075d57a828c9c2.png",
+      "url": "/images/customers/b3cfc0d823f691f550075d57a828c9c2.png",
       "name": "B3cfc0d823f691f550075d57a828c9c2",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/c06685b0cfd6217b9c7e86c30f3586f7.png",
+      "url": "/images/customers/c06685b0cfd6217b9c7e86c30f3586f7.png",
       "name": "C06685b0cfd6217b9c7e86c30f3586f7",
       "source": "extracted",
       "isPlaceholder": false
@@ -399,7 +394,7 @@
   "leadTimes": [
     {
       "type": "RFQ response",
-      "duration": "24–48 hour technical review"
+      "duration": "24â€“48 hour technical review"
     },
     {
       "type": "Project discussion",
@@ -413,7 +408,7 @@
     "phone": "42 41.64 836.76 32.76"
   },
   "brand": {
-    "logoUrl": "https://www.vcuinternational.com/style/picture/qmp-logo-white-01.png",
+    "logoUrl": "/images/brand/vcuinternational-logo-white.png",
     "primaryColor": "#b4232c"
   },
   "images": {
@@ -544,7 +539,7 @@
     "Contact"
   ],
   "templateSlots": {
-    "logoUrl": "https://www.vcuinternational.com/style/picture/qmp-logo-white-01.png",
+    "logoUrl": "/images/brand/vcuinternational-logo-white.png",
     "companyName": "Vcuinternational",
     "primaryColor": "#b4232c",
     "navLabels": [
@@ -555,8 +550,8 @@
       "Contact"
     ],
     "heroEyebrow": "Automotive and Defence Supply",
-    "heroHeadline": "Precision manufacturing for Automotive and Defence programmes.",
-    "heroSubheadline": "Supporting Automotive and Defence supply with IATF 16949 and cmm inspection.",
+    "heroHeadline": "Built for precision. Scaled for production.",
+    "heroSubheadline": "IATF 16949 certified. Metals and polymers. Automotive and defence.",
     "headline": "Multi-Process Manufacturing",
     "subheadline": "Serving Automotive applications",
     "primaryCtaLabel": "Request a Quote",
@@ -586,12 +581,7 @@
         "hasVisualAssessment": false
       }
     ],
-    "topTrustBadges": [
-      "IATF 16949",
-      "Automotive supply",
-      "Prototype to production",
-      "CMM Inspection"
-    ],
+    "topTrustBadges": ["IATF 16949 certified", "10+ processes", "Export-ready"],
     "topProofStats": [
       {
         "label": "Capability Areas",
@@ -620,10 +610,10 @@
         "value": "3"
       }
     ],
-    "about": "Vcuinternational supports Automotive and Defence supply with multi-process manufacturing support, backed by IATF 16949 and ISO 9001:2015.",
+    "about": "End-to-end precision manufacturing for OEM programmes",
     "capabilityIntro": "CNC Machining, Casting, Sheet Metal Fabrication run in-house, with documented experience across Aluminium, Steel.",
     "industryIntro": "Manufacturing support aligned to Automotive, Defence, Marine, with capability across CNC Machining, Casting.",
-    "whyChooseUsIntro": "What buyers get in practice: a shorter path to qualification, a narrower set of suppliers to manage, and fewer unknowns at launch.",
+    "whyChooseUsIntro": "Fewer handovers. Less programme risk.",
     "additionalCapabilities": [
       "Investment Casting",
       "Sand Casting",
@@ -663,7 +653,7 @@
     ],
     "buyerChallengeTeaser": {
       "title": "Stay with one supplier from first sample to repeat supply.",
-      "summary": "Keep the same technical contact, the same quality baseline, and the same production route from validation through volume — no mid-programme re-qualification."
+      "summary": "Keep the same technical contact, the same quality baseline, and the same production route from validation through volume â€” no mid-programme re-qualification."
     },
     "recommendationDrivenUpgrades": [],
     "capabilities": [
@@ -866,61 +856,61 @@
     ],
     "customerLogos": [
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/a09e01b69a7b052b2b1b538530b20079.jpeg",
+        "url": "/images/customers/a09e01b69a7b052b2b1b538530b20079.png",
         "name": "A09e01b69a7b052b2b1b538530b20079",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/22fe3910210f72c92a0d46875f752473.png",
+        "url": "/images/customers/22fe3910210f72c92a0d46875f752473.png",
         "name": "22fe3910210f72c92a0d46875f752473",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/e55b2646925156b02ff7a71232acd7b0.png",
+        "url": "/images/customers/e55b2646925156b02ff7a71232acd7b0.png",
         "name": "E55b2646925156b02ff7a71232acd7b0",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/cfa27aed5a6ce0dfebb8a4a10e8d92d1.png",
+        "url": "/images/customers/cfa27aed5a6ce0dfebb8a4a10e8d92d1.png",
         "name": "Cfa27aed5a6ce0dfebb8a4a10e8d92d1",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/1c2af883fb57d19492cfca4b40322202.png",
+        "url": "/images/customers/1c2af883fb57d19492cfca4b40322202.png",
         "name": "1c2af883fb57d19492cfca4b40322202",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/afbf14f396f88d2560d82c870737653d.png",
+        "url": "/images/customers/afbf14f396f88d2560d82c870737653d.png",
         "name": "Afbf14f396f88d2560d82c870737653d",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/eaca460f007adbec1e6462894d2f0724.png",
+        "url": "/images/customers/eaca460f007adbec1e6462894d2f0724.png",
         "name": "Eaca460f007adbec1e6462894d2f0724",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/a4b8e1b11f5a7cc14eb813d1b7fb5ea5.png",
+        "url": "/images/customers/a4b8e1b11f5a7cc14eb813d1b7fb5ea5.png",
         "name": "A4b8e1b11f5a7cc14eb813d1b7fb5ea5",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/b3cfc0d823f691f550075d57a828c9c2.png",
+        "url": "/images/customers/b3cfc0d823f691f550075d57a828c9c2.png",
         "name": "B3cfc0d823f691f550075d57a828c9c2",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/c06685b0cfd6217b9c7e86c30f3586f7.png",
+        "url": "/images/customers/c06685b0cfd6217b9c7e86c30f3586f7.png",
         "name": "C06685b0cfd6217b9c7e86c30f3586f7",
         "source": "extracted",
         "isPlaceholder": false
@@ -938,8 +928,8 @@
         ],
         "specs": {
           "axes": "3-axis / 4-axis",
-          "envelope": "1,000 × 500 × 400 mm",
-          "tolerance": "±0.01 mm"
+          "envelope": "1,000 Ã— 500 Ã— 400 mm",
+          "tolerance": "Â±0.01 mm"
         },
         "evidence": "inferred",
         "utilisationPct": 82,
@@ -957,9 +947,9 @@
         ],
         "badge": "Multi-route",
         "specs": {
-          "axes": "N/A — casting process",
+          "axes": "N/A â€” casting process",
           "envelope": "Up to 500 kg per part",
-          "tolerance": "±0.1 mm"
+          "tolerance": "Â±0.1 mm"
         },
         "evidence": "inferred",
         "utilisationPct": 85,
@@ -976,9 +966,9 @@
           "In-process dimensional inspection"
         ],
         "specs": {
-          "axes": "Press tonnage: 50–400 T",
-          "envelope": "2,500 × 1,250 mm sheet",
-          "tolerance": "±0.1 mm formed / ±0.05 mm laser"
+          "axes": "Press tonnage: 50â€“400 T",
+          "envelope": "2,500 Ã— 1,250 mm sheet",
+          "tolerance": "Â±0.1 mm formed / Â±0.05 mm laser"
         },
         "evidence": "inferred",
         "utilisationPct": 76,
@@ -996,9 +986,9 @@
         ],
         "badge": "High-volume",
         "specs": {
-          "axes": "Clamping: 80–1,200 T",
+          "axes": "Clamping: 80â€“1,200 T",
           "envelope": "Shot weight up to 2,000 g",
-          "tolerance": "±0.05 mm on critical dims"
+          "tolerance": "Â±0.05 mm on critical dims"
         },
         "evidence": "inferred",
         "utilisationPct": 82,
@@ -1016,9 +1006,9 @@
         ],
         "badge": "Near-net-shape",
         "specs": {
-          "axes": "N/A — sintering process",
+          "axes": "N/A â€” sintering process",
           "envelope": "Components up to 2 kg",
-          "tolerance": "±0.05 mm as-sintered"
+          "tolerance": "Â±0.05 mm as-sintered"
         },
         "evidence": "inferred",
         "utilisationPct": 83,
@@ -1036,9 +1026,9 @@
         ],
         "badge": "Profiles",
         "specs": {
-          "axes": "N/A — extrusion process",
+          "axes": "N/A â€” extrusion process",
           "envelope": "Profile cross-section varies by die",
-          "tolerance": "±0.1 mm cross-section"
+          "tolerance": "Â±0.1 mm cross-section"
         },
         "evidence": "inferred",
         "utilisationPct": 76,
@@ -1283,7 +1273,7 @@
     "leadTimes": [
       {
         "type": "RFQ response",
-        "duration": "24–48 hour technical review"
+        "duration": "24â€“48 hour technical review"
       },
       {
         "type": "Project discussion",
@@ -1367,8 +1357,8 @@
       ],
       "specs": {
         "axes": "3-axis / 4-axis",
-        "envelope": "1,000 × 500 × 400 mm",
-        "tolerance": "±0.01 mm"
+        "envelope": "1,000 Ã— 500 Ã— 400 mm",
+        "tolerance": "Â±0.01 mm"
       },
       "evidence": "inferred",
       "utilisationPct": 82,
@@ -1386,9 +1376,9 @@
       ],
       "badge": "Multi-route",
       "specs": {
-        "axes": "N/A — casting process",
+        "axes": "N/A â€” casting process",
         "envelope": "Up to 500 kg per part",
-        "tolerance": "±0.1 mm"
+        "tolerance": "Â±0.1 mm"
       },
       "evidence": "inferred",
       "utilisationPct": 85,
@@ -1405,9 +1395,9 @@
         "In-process dimensional inspection"
       ],
       "specs": {
-        "axes": "Press tonnage: 50–400 T",
-        "envelope": "2,500 × 1,250 mm sheet",
-        "tolerance": "±0.1 mm formed / ±0.05 mm laser"
+        "axes": "Press tonnage: 50â€“400 T",
+        "envelope": "2,500 Ã— 1,250 mm sheet",
+        "tolerance": "Â±0.1 mm formed / Â±0.05 mm laser"
       },
       "evidence": "inferred",
       "utilisationPct": 76,
@@ -1425,9 +1415,9 @@
       ],
       "badge": "High-volume",
       "specs": {
-        "axes": "Clamping: 80–1,200 T",
+        "axes": "Clamping: 80â€“1,200 T",
         "envelope": "Shot weight up to 2,000 g",
-        "tolerance": "±0.05 mm on critical dims"
+        "tolerance": "Â±0.05 mm on critical dims"
       },
       "evidence": "inferred",
       "utilisationPct": 82,
@@ -1445,9 +1435,9 @@
       ],
       "badge": "Near-net-shape",
       "specs": {
-        "axes": "N/A — sintering process",
+        "axes": "N/A â€” sintering process",
         "envelope": "Components up to 2 kg",
-        "tolerance": "±0.05 mm as-sintered"
+        "tolerance": "Â±0.05 mm as-sintered"
       },
       "evidence": "inferred",
       "utilisationPct": 83,
@@ -1465,9 +1455,9 @@
       ],
       "badge": "Profiles",
       "specs": {
-        "axes": "N/A — extrusion process",
+        "axes": "N/A â€” extrusion process",
         "envelope": "Profile cross-section varies by die",
-        "tolerance": "±0.1 mm cross-section"
+        "tolerance": "Â±0.1 mm cross-section"
       },
       "evidence": "inferred",
       "utilisationPct": 76,

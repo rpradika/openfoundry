@@ -5,7 +5,8 @@
       "whatWeDo": "Chúng tôi làm gì",
       "capabilities": "Năng lực",
       "services": "Dịch vụ",
-      "contact": "Liên hệ"
+      "contact": "Liên hệ",
+      "company": "Công ty"
     }
   },
   "footer": {
@@ -22,6 +23,8 @@
     }
   },
   "contact": {
+    "eyebrow": "Yêu cầu báo giá",
+    "heading": "Gửi bản vẽ cho chúng tôi. Chúng tôi sẽ phản hồi kèm báo giá.",
     "leadTimesEyebrow": "Thời gian & năng lực sản xuất",
     "typeColumn": "Loại",
     "durationColumn": "Thời gian",
@@ -34,12 +37,18 @@
     "receivedHeading": "Đã nhận",
     "receivedBody": "Cảm ơn — đội ngũ của chúng tôi sẽ phản hồi trong vòng 24–48 giờ.",
     "label": {
-      "name": "Tên",
-      "company": "Công ty",
-      "email": "Email",
-      "phone": "Điện thoại",
+      "name": "Họ và tên",
+      "company": "Tên công ty",
+      "email": "Địa chỉ email",
+      "phone": "Số điện thoại",
       "phoneOptional": "(tùy chọn)",
-      "project": "Dự án"
+      "project": "Chi tiết dự án"
+    },
+    "placeholder": {
+      "name": "Họ và tên của bạn",
+      "company": "Tên công ty của bạn",
+      "email": "email@congty.com",
+      "phone": "+84 ..."
     },
     "projectPlaceholder": "Chi tiết linh kiện, quy trình, vật liệu, sản lượng mục tiêu, lịch trình mong muốn…",
     "errors": {
@@ -59,24 +68,55 @@
   "sections": {
     "about": {
       "eyebrow": "Về {company}",
-      "tileLabels": {
+      "paragraph1": "VCU International là nhà sản xuất đạt chứng nhận IATF 16949 và ISO 9001, cung cấp linh kiện kim loại và nhựa chính xác cho các chương trình OEM toàn cầu. Với hơn 16 năm kinh nghiệm xuất khẩu tại Việt Nam và Trung Quốc, chúng tôi đồng hành cùng khách hàng từ mẫu thử đến sản xuất số lượng lớn.",
+      "paragraph2": "Năng lực tích hợp của chúng tôi gồm gia công CNC, đúc, dập và ép nhựa, được hỗ trợ bởi kiểm tra CMM nội bộ và kiểm soát chất lượng dựa trên ERP. Một đầu mối liên hệ duy nhất đảm bảo tính nhất quán từ thiết kế ban đầu đến giao hàng lặp lại.",
+      "body": "Được các OEM toàn cầu tin dùng trong các lĩnh vực ô tô, hàng không và công nghiệp.",
+      "stats": {
         "capabilityAreas": "Lĩnh vực năng lực",
+        "capabilityAreasSub": "Phạm vi sản xuất cốt lõi",
         "accreditations": "Chứng nhận",
-        "primaryCert": "Chứng nhận chính",
-        "industry": "Ngành"
-      },
-      "buyerChallengeEyebrow": "Vì sao điều này quan trọng"
+        "accreditationsSub": "Tiêu chuẩn đã xác minh",
+        "industriesServed": "Ngành phục vụ",
+        "industriesServedSub": "Lĩnh vực hỗ trợ",
+        "qualityAnchor": "Chuẩn chất lượng"
+      }
     },
     "customerLogos": {
-      "eyebrow": "Được tin tưởng bởi",
+      "eyebrow": "Được các đội ngũ tin dùng",
       "intro": "Mối quan hệ cung ứng lâu dài qua các chương trình ô tô, quốc phòng và hàng hải."
+    },
+    "machinePark": {
+      "eyebrow": "Hệ thống máy móc",
+      "title": "Sản xuất tiên tiến",
+      "sourceNote": "từ tài liệu thiết bị",
+      "utilisation": "Công suất",
+      "viewSpecs": "Xem thông số đầy đủ",
+      "of": "trên",
+      "prev": "Máy trước",
+      "next": "Máy tiếp theo",
+      "specs": {
+        "axes": "Trục / Cấu hình",
+        "envelope": "Phạm vi gia công",
+        "tolerance": "Dung sai"
+      }
     },
     "capabilities": {
       "eyebrow": "Chúng tôi làm gì",
       "title": "Năng lực sản xuất",
       "capabilityLabel": "Năng lực",
       "qualityProof": "Bằng chứng chất lượng",
-      "alsoAvailable": "Năng lực bổ sung"
+      "alsoAvailable": "Năng lực bổ sung",
+      "detailsLabel": "Chi tiết năng lực",
+      "discussCapability": "Trao đổi về năng lực này",
+      "onboardingNote": "Sẽ được định lượng trong quá trình tiếp nhận nhà cung cấp.",
+      "fields": {
+        "processScope": "Phạm vi quy trình",
+        "materials": "Vật liệu",
+        "tolerances": "Dung sai",
+        "inspection": "Kiểm tra",
+        "productionScale": "Quy mô sản xuất",
+        "typicalApplications": "Ứng dụng điển hình"
+      }
     },
     "materials": {
       "eyebrow": "Chuyên môn vật liệu",
@@ -89,7 +129,9 @@
     },
     "qualityKpis": {
       "eyebrow": "Xuất sắc về hệ thống chất lượng",
-      "title": "Chỉ số hiệu suất"
+      "title": "Chỉ số hiệu suất",
+      "intro": "Chỉ số hiệu suất theo thời gian thực từ hệ thống QMS tích hợp",
+      "footnote": "* Suy luận từ bằng chứng công khai. Được định lượng cùng đội ngũ của bạn trong quá trình tiếp nhận."
     },
     "programmeDelivery": {
       "eyebrow": "Triển khai chương trình",
@@ -99,12 +141,15 @@
     },
     "buyers": {
       "eyebrow": "Vì sao người mua chọn nhà cung cấp này",
-      "fallbackTitle": "Lợi ích thực tế cho người mua"
+      "fallbackTitle": "Lợi ích thực tế cho người mua",
+      "subtitle": "Một đầu mối kỹ thuật chịu trách nhiệm duy nhất từ RFQ đến cung ứng lặp lại — với quy trình được tài liệu hoá và kiểm tra phù hợp tiêu chí chấp nhận của OEM.",
+      "verifyHeading": "Điều người mua có thể kiểm chứng",
+      "confidenceHeading": "Tín hiệu tin cậy"
     },
     "processHighlights": {
-      "eyebrow": "Điểm nổi bật quy trình",
-      "title": "Các chương trình đã được tài liệu hoá trong hồ sơ kỹ thuật",
-      "intro": "Tải hồ sơ kỹ thuật của từng chương trình — hình học chi tiết, vật liệu, bằng chứng KPI và lộ trình phê duyệt.",
+      "eyebrow": "Bằng chứng",
+      "title": "Các chương trình chúng tôi đã thực hiện",
+      "intro": "Một số ví dụ về các chi tiết được đưa từ bản vẽ đến giao hàng lặp lại — những thông tin mà kỹ sư của bạn quan tâm.",
       "downloadPdf": "Tải hồ sơ"
     }
   }

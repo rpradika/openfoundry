@@ -328,61 +328,61 @@
   ],
   "customerLogos": [
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/a09e01b69a7b052b2b1b538530b20079.jpeg",
+      "url": "/images/customers/a09e01b69a7b052b2b1b538530b20079.png",
       "name": "A09e01b69a7b052b2b1b538530b20079",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/22fe3910210f72c92a0d46875f752473.png",
+      "url": "/images/customers/22fe3910210f72c92a0d46875f752473.png",
       "name": "22fe3910210f72c92a0d46875f752473",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/e55b2646925156b02ff7a71232acd7b0.png",
+      "url": "/images/customers/e55b2646925156b02ff7a71232acd7b0.png",
       "name": "E55b2646925156b02ff7a71232acd7b0",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/cfa27aed5a6ce0dfebb8a4a10e8d92d1.png",
+      "url": "/images/customers/cfa27aed5a6ce0dfebb8a4a10e8d92d1.png",
       "name": "Cfa27aed5a6ce0dfebb8a4a10e8d92d1",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/1c2af883fb57d19492cfca4b40322202.png",
+      "url": "/images/customers/1c2af883fb57d19492cfca4b40322202.png",
       "name": "1c2af883fb57d19492cfca4b40322202",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/afbf14f396f88d2560d82c870737653d.png",
+      "url": "/images/customers/afbf14f396f88d2560d82c870737653d.png",
       "name": "Afbf14f396f88d2560d82c870737653d",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/eaca460f007adbec1e6462894d2f0724.png",
+      "url": "/images/customers/eaca460f007adbec1e6462894d2f0724.png",
       "name": "Eaca460f007adbec1e6462894d2f0724",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/a4b8e1b11f5a7cc14eb813d1b7fb5ea5.png",
+      "url": "/images/customers/a4b8e1b11f5a7cc14eb813d1b7fb5ea5.png",
       "name": "A4b8e1b11f5a7cc14eb813d1b7fb5ea5",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/b3cfc0d823f691f550075d57a828c9c2.png",
+      "url": "/images/customers/b3cfc0d823f691f550075d57a828c9c2.png",
       "name": "B3cfc0d823f691f550075d57a828c9c2",
       "source": "extracted",
       "isPlaceholder": false
     },
     {
-      "url": "https://www.vcuinternational.com/upload/default/20250714/c06685b0cfd6217b9c7e86c30f3586f7.png",
+      "url": "/images/customers/c06685b0cfd6217b9c7e86c30f3586f7.png",
       "name": "C06685b0cfd6217b9c7e86c30f3586f7",
       "source": "extracted",
       "isPlaceholder": false
@@ -413,7 +413,7 @@
     "phone": "42 41.64 836.76 32.76"
   },
   "brand": {
-    "logoUrl": "https://www.vcuinternational.com/style/picture/qmp-logo-white-01.png",
+    "logoUrl": "/images/brand/vcuinternational-logo-white.png",
     "primaryColor": "#b4232c"
   },
   "images": {
@@ -544,7 +544,7 @@
     "Liên hệ"
   ],
   "templateSlots": {
-    "logoUrl": "https://www.vcuinternational.com/style/picture/qmp-logo-white-01.png",
+    "logoUrl": "/images/brand/vcuinternational-logo-white.png",
     "companyName": "Vcuinternational",
     "primaryColor": "#b4232c",
     "navLabels": [
@@ -866,61 +866,61 @@
     ],
     "customerLogos": [
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/a09e01b69a7b052b2b1b538530b20079.jpeg",
+        "url": "/images/customers/a09e01b69a7b052b2b1b538530b20079.png",
         "name": "A09e01b69a7b052b2b1b538530b20079",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/22fe3910210f72c92a0d46875f752473.png",
+        "url": "/images/customers/22fe3910210f72c92a0d46875f752473.png",
         "name": "22fe3910210f72c92a0d46875f752473",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/e55b2646925156b02ff7a71232acd7b0.png",
+        "url": "/images/customers/e55b2646925156b02ff7a71232acd7b0.png",
         "name": "E55b2646925156b02ff7a71232acd7b0",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/cfa27aed5a6ce0dfebb8a4a10e8d92d1.png",
+        "url": "/images/customers/cfa27aed5a6ce0dfebb8a4a10e8d92d1.png",
         "name": "Cfa27aed5a6ce0dfebb8a4a10e8d92d1",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/1c2af883fb57d19492cfca4b40322202.png",
+        "url": "/images/customers/1c2af883fb57d19492cfca4b40322202.png",
         "name": "1c2af883fb57d19492cfca4b40322202",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/afbf14f396f88d2560d82c870737653d.png",
+        "url": "/images/customers/afbf14f396f88d2560d82c870737653d.png",
         "name": "Afbf14f396f88d2560d82c870737653d",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/eaca460f007adbec1e6462894d2f0724.png",
+        "url": "/images/customers/eaca460f007adbec1e6462894d2f0724.png",
         "name": "Eaca460f007adbec1e6462894d2f0724",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/a4b8e1b11f5a7cc14eb813d1b7fb5ea5.png",
+        "url": "/images/customers/a4b8e1b11f5a7cc14eb813d1b7fb5ea5.png",
         "name": "A4b8e1b11f5a7cc14eb813d1b7fb5ea5",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/b3cfc0d823f691f550075d57a828c9c2.png",
+        "url": "/images/customers/b3cfc0d823f691f550075d57a828c9c2.png",
         "name": "B3cfc0d823f691f550075d57a828c9c2",
         "source": "extracted",
         "isPlaceholder": false
       },
       {
-        "url": "https://www.vcuinternational.com/upload/default/20250714/c06685b0cfd6217b9c7e86c30f3586f7.png",
+        "url": "/images/customers/c06685b0cfd6217b9c7e86c30f3586f7.png",
         "name": "C06685b0cfd6217b9c7e86c30f3586f7",
         "source": "extracted",
         "isPlaceholder": false

@@ -1,13 +1,17 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { getBlueprint } from "@/lib/blueprint";
+import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "./language-switcher";
 
 const NAV_ITEMS = [
   { key: "whatWeDo", href: "#about" },
   { key: "capabilities", href: "#capabilities" },
   { key: "services", href: "#programme-delivery" },
-  { key: "contact", href: "#contact" },
+  { key: "company", href: "#contact" },
 ] as const;
 
 function ChevronDown() {
@@ -36,9 +40,24 @@ export function Nav() {
   const blueprint = getBlueprint(useLocale());
   const { logoUrl } = blueprint.brand;
   const companyName = blueprint.company.name;
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-[100] flex h-20 items-center justify-between gap-6 border-b border-white/[0.08] bg-bg-hero px-5 md:px-10">
+    <nav
+      className={cn(
+        "fixed inset-x-0 top-0 z-[100] flex h-20 items-center justify-between gap-6 px-5 transition-colors duration-300 md:px-10",
+        scrolled
+          ? "border-b border-white/[0.08] bg-bg-hero/95 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent",
+      )}
+    >
       <a
         href="#"
         className="flex flex-shrink-0 items-center gap-2.5"
@@ -48,10 +67,11 @@ export function Nav() {
           <Image
             src={logoUrl}
             alt={companyName}
-            width={200}
-            height={52}
+            width={400}
+            height={192}
             className="h-[52px] w-auto object-contain"
             priority
+            unoptimized
           />
         ) : (
           <span className="text-[18px] font-bold tracking-[-0.03em] text-white">

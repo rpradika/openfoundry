@@ -36,6 +36,24 @@
   }
 }
 
+/* Logo carousel (marquee) */
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.logo-marquee {
+  display: flex;
+  width: max-content;
+  animation: logo-marquee 40s linear infinite;
+}
+.logo-marquee-viewport:hover .logo-marquee {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

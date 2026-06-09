@@ -5,7 +5,7 @@ import { Nav } from "@/components/sections/nav";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { Capabilities } from "@/components/sections/capabilities";
-import { Materials } from "@/components/sections/materials";
+import { MachinePark } from "@/components/sections/machine-park";
 import { Quality } from "@/components/sections/quality";
 import { QualityKpis } from "@/components/sections/quality-kpis";
 import { ProgrammeDelivery } from "@/components/sections/programme-delivery";
@@ -29,15 +29,15 @@ export default async function Home({
       <Nav />
       <main>
         <Hero />
+        <CustomerLogos />
         <About />
         <Capabilities />
-        <Materials />
+        <MachinePark />
+        <ProgrammeDelivery />
         <Quality />
         <QualityKpis />
-        <ProgrammeDelivery />
-        <ProcessHighlights />
         <Buyers />
-        <CustomerLogos />
+        <ProcessHighlights />
         <LeadTimesContact />
       </main>
       <Footer />

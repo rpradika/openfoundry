@@ -144,6 +144,7 @@ export interface EquipmentCard {
   evidence: "inferred" | "confirmed";
   utilisationPct: number;
   utilisationVerified: boolean;
+  imageUrl?: string;
 }
 
 export interface QualityKpi {

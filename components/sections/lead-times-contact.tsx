@@ -6,82 +6,61 @@ export function LeadTimesContact() {
   const t = useTranslations("contact");
   const blueprint = getBlueprint(useLocale());
   const leadTimes = blueprint.leadTimes ?? [];
-  const contact = blueprint.contactDetails;
-  const contactCta = blueprint.templateSlots?.contactCta ?? "Request a Quote";
   const contactLine = blueprint.contactLine;
-
-  if (leadTimes.length === 0 && !contact) return null;
+  const rfqChip = leadTimes[0]
+    ? `${leadTimes[0].type}: ${leadTimes[0].duration}*`
+    : null;
 
   return (
-    <section id="contact" className="border-b border-white/[0.08] bg-bg-hero">
-      <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
-        <div className="grid grid-cols-1 items-start gap-12 lg:[grid-template-columns:minmax(0,1fr)_minmax(0,1.45fr)]">
-          {leadTimes.length > 0 && (
-            <div>
-              <div className="mb-5 flex items-center gap-3 font-mono text-[10px] font-semibold uppercase tracking-[0.26em] text-white/55">
-                <span className="inline-block h-px w-7 bg-white/55" />
-                {t("leadTimesEyebrow")}
-              </div>
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr>
-                    <th className="border-b border-white/10 px-0 pt-0 pb-2.5 text-left font-mono text-[9px] font-normal uppercase tracking-[0.18em] text-white/[0.38]">
-                      {t("typeColumn")}
-                    </th>
-                    <th className="border-b border-white/10 px-0 pt-0 pb-2.5 text-right font-mono text-[9px] font-normal uppercase tracking-[0.18em] text-white/[0.38]">
-                      {t("durationColumn")}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {leadTimes.map((lt) => (
-                    <tr key={lt.type}>
-                      <td className="border-b border-white/[0.07] px-0 py-3 align-middle text-[13px] font-medium text-white/[0.72]">
-                        {lt.type}
-                      </td>
-                      <td className="border-b border-white/[0.07] px-0 py-3 text-right align-middle font-mono text-[15px] font-semibold text-white/[0.95]">
-                        {lt.duration}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-              {contact && (
-                <div className="mt-8 grid gap-1.5 border-t border-white/[0.07] pt-6 text-[12px] text-white/[0.62]">
-                  <div className="mb-1 font-mono text-[9px] font-semibold uppercase tracking-[0.22em] text-white/40">
-                    {t("orReachOutDirectly")}
-                  </div>
-                  {contact.email && (
-                    <div>
-                      <a
-                        href={`mailto:${contact.email}`}
-                        className="text-white/75 transition-colors hover:text-white/95"
-                      >
-                        {contact.email}
-                      </a>
-                    </div>
-                  )}
-                  {contact.phone && <div>{contact.phone}</div>}
-                  {contact.address && <div className="text-white/[0.48]">{contact.address}</div>}
-                </div>
-              )}
+    <section
+      id="contact"
+      className="px-6 pt-8"
+      style={{
+        background:
+          "linear-gradient(180deg, color-mix(in srgb, var(--color-bg-page) 94%, white 6%) 0%, var(--color-bg-page) 60%, var(--color-bg-hero) 60%, var(--color-bg-hero) 100%)",
+      }}
+    >
+      <div
+        className="mx-auto max-w-5xl rounded-[28px] border border-border-soft bg-bg-surface px-5 py-5 shadow-[0_24px_52px_rgba(15,23,42,0.12)] sm:px-6 sm:py-6"
+      >
+        <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,0.84fr)_minmax(0,1.16fr)] lg:gap-6">
+          {/* Intro */}
+          <div className="lg:pr-3">
+            <div className="text-[11px] font-semibold tracking-[-0.005em] text-brand">
+              {t("eyebrow")}
             </div>
-          )}
-
-          <div className="pt-2">
-            <div className="mb-5 flex items-center gap-3 font-mono text-[10px] font-semibold uppercase tracking-[0.26em] text-white/55">
-              <span className="inline-block h-px w-7 bg-white/55" />
-              {t("getInTouchEyebrow")}
-            </div>
-            <div className="mb-2 text-[clamp(22px,3vw,32px)] font-bold leading-[1.05] tracking-[-0.04em] text-white">
-              {contactCta}
-            </div>
+            <h2 className="mt-1.5 text-[28px] font-semibold leading-[1.02] tracking-[-0.045em] text-text-primary sm:text-[38px]">
+              {t("heading")}
+            </h2>
             {contactLine && (
-              <p className="mb-8 max-w-[480px] text-[14px] leading-[1.6] text-white/60">
+              <p className="mt-3 max-w-md text-[13px] leading-[1.62] text-text-secondary sm:text-[14px]">
                 {contactLine}
               </p>
             )}
+            {rfqChip && (
+              <div
+                className="mt-4 flex items-center gap-3 rounded-[14px] border border-border-soft px-3.5 py-3"
+                style={{
+                  backgroundColor: "color-mix(in srgb, var(--color-bg-page) 95%, white 5%)",
+                }}
+              >
+                <div
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-brand"
+                  style={{
+                    backgroundColor: "color-mix(in srgb, var(--color-brand) 10%, white 90%)",
+                  }}
+                >
+                  ✓
+                </div>
+                <span className="text-[12px] font-semibold text-text-secondary">
+                  {rfqChip}
+                </span>
+              </div>
+            )}
+          </div>
+
+          {/* Form */}
+          <div>
             <RfqForm />
           </div>
         </div>

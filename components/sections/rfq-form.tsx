@@ -8,11 +8,10 @@ import { createRfqSchema, type RfqInput } from "@/lib/rfq-schema";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-const labelClass =
-  "mb-2 block font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-white/55";
+const labelClass = "mb-1.5 block text-[11px] font-semibold tracking-[-0.005em] text-text-primary";
 const inputClass =
-  "w-full rounded-none border border-white/[0.12] bg-white/[0.04] px-3.5 py-3 text-[13px] text-white placeholder:text-white/30 focus:border-white/35 focus:outline-none focus:ring-1 focus:ring-white/35";
-const errorClass = "mt-1.5 text-[11px] text-[color-mix(in_srgb,var(--color-brand)_70%,white_30%)]";
+  "w-full rounded-[15px] border border-border-soft bg-[color-mix(in_srgb,var(--color-bg-page)_92%,white_8%)] px-4 py-2.5 text-[13px] text-text-primary placeholder:text-text-muted focus:border-brand/40 focus:outline-none focus:ring-2 focus:ring-brand/15";
+const errorClass = "mt-1.5 text-[11px] text-brand";
 
 export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
   const t = useTranslations("rfq");
@@ -65,17 +64,17 @@ export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
 
   if (status === "success") {
     return (
-      <div className="rounded-none border border-white/[0.12] bg-white/[0.04] px-5 py-6">
-        <div className="mb-2 font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-white/55">
+      <div className="rounded-[16px] border border-border-soft bg-[color-mix(in_srgb,var(--color-bg-page)_95%,white_5%)] px-5 py-6">
+        <div className="mb-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-brand">
           {t("receivedHeading")}
         </div>
-        <p className="text-[14px] text-white/85">{t("receivedBody")}</p>
+        <p className="text-[14px] text-text-secondary">{t("receivedBody")}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="grid gap-4">
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden"
@@ -86,14 +85,7 @@ export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
         </label>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <div>
-          <label htmlFor="rfq-name" className={labelClass}>
-            {t("label.name")}
-          </label>
-          <input id="rfq-name" type="text" autoComplete="name" className={inputClass} {...register("name")} />
-          {errors.name && <p className={errorClass}>{errors.name.message}</p>}
-        </div>
+      <div className="mb-3.5 grid gap-3.5 sm:grid-cols-2">
         <div>
           <label htmlFor="rfq-company" className={labelClass}>
             {t("label.company")}
@@ -102,14 +94,26 @@ export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
             id="rfq-company"
             type="text"
             autoComplete="organization"
+            placeholder={t("placeholder.company")}
             className={inputClass}
             {...register("company")}
           />
           {errors.company && <p className={errorClass}>{errors.company.message}</p>}
         </div>
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-2">
+        <div>
+          <label htmlFor="rfq-name" className={labelClass}>
+            {t("label.name")}
+          </label>
+          <input
+            id="rfq-name"
+            type="text"
+            autoComplete="name"
+            placeholder={t("placeholder.name")}
+            className={inputClass}
+            {...register("name")}
+          />
+          {errors.name && <p className={errorClass}>{errors.name.message}</p>}
+        </div>
         <div>
           <label htmlFor="rfq-email" className={labelClass}>
             {t("label.email")}
@@ -118,6 +122,7 @@ export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
             id="rfq-email"
             type="email"
             autoComplete="email"
+            placeholder={t("placeholder.email")}
             className={inputClass}
             {...register("email")}
           />
@@ -125,15 +130,13 @@ export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
         </div>
         <div>
           <label htmlFor="rfq-phone" className={labelClass}>
-            {t("label.phone")}{" "}
-            <span className="text-white/30 normal-case tracking-normal">
-              {t("label.phoneOptional")}
-            </span>
+            {t("label.phone")}
           </label>
           <input
             id="rfq-phone"
             type="tel"
             autoComplete="tel"
+            placeholder={t("placeholder.phone")}
             className={inputClass}
             {...register("phone")}
           />
@@ -141,13 +144,13 @@ export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
         </div>
       </div>
 
-      <div>
+      <div className="mb-4">
         <label htmlFor="rfq-project" className={labelClass}>
           {t("label.project")}
         </label>
         <textarea
           id="rfq-project"
-          rows={5}
+          rows={3}
           className={`${inputClass} resize-y`}
           placeholder={t("projectPlaceholder")}
           {...register("project")}
@@ -155,20 +158,23 @@ export function RfqForm({ ctaLabel }: { ctaLabel?: string }) {
         {errors.project && <p className={errorClass}>{errors.project.message}</p>}
       </div>
 
-      <div className="flex items-center gap-4">
-        <button
-          type="submit"
-          disabled={status === "submitting"}
-          className="inline-flex items-center gap-2 bg-brand px-7 py-3.5 text-[13px] font-semibold text-white transition-opacity hover:opacity-[0.88] disabled:opacity-60"
-        >
+      <button
+        type="submit"
+        disabled={status === "submitting"}
+        className="group w-full rounded-[16px] bg-bg-hero px-6 py-4 text-center text-[15.5px] font-semibold text-white shadow-[0_18px_38px_rgba(15,23,42,0.18)] transition-transform duration-200 ease-out hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60"
+      >
+        <span className="inline-flex items-center justify-center gap-2">
           {status === "submitting" ? t("sending") : (ctaLabel ?? t("ctaSend"))}
-        </button>
-        {serverError && (
-          <span className={errorClass} role="alert">
-            {serverError}
+          <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-0.5">
+            →
           </span>
-        )}
-      </div>
+        </span>
+      </button>
+      {serverError && (
+        <p className={errorClass} role="alert">
+          {serverError}
+        </p>
+      )}
     </form>
   );
 }

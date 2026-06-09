@@ -25,9 +25,10 @@ export function Footer() {
               <Image
                 src={logoUrl}
                 alt={companyName}
-                width={120}
-                height={28}
+                width={400}
+                height={192}
                 className="mb-3 h-7 w-auto object-contain"
+                unoptimized
               />
             ) : (
               <div className="mb-3 text-[16px] font-bold tracking-[-0.03em] text-white">
@@ -78,8 +79,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-baseline gap-2.5 border-t border-white/[0.07] pt-5">
-          <span className="flex-shrink-0 font-mono text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55">
+        {/* Provenance note — centered */}
+        <div className="flex flex-col items-center gap-1.5 border-t border-white/[0.07] pt-5 text-center">
+          <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55">
             {t("valuesMarkedWith")}
           </span>
           <p className="max-w-[600px] text-[11px] leading-[1.7] text-white/[0.38]">

@@ -1,81 +1,82 @@
 import { useLocale, useTranslations } from "next-intl";
 import { getBlueprint } from "@/lib/blueprint";
-import { SectionHeader } from "./section-header";
 
 export function About() {
   const blueprint = getBlueprint(useLocale());
   const t = useTranslations("sections.about");
-  const { company, capabilityIntro, whyChooseUsIntro, buyerChallengeTeaser } = blueprint;
+  const { company } = blueprint;
 
-  const capabilityCount =
-    blueprint.allCapabilitiesCanonical?.length ??
-    Number(blueprint.stats?.find((s) => s.label === "Capability Areas")?.value ?? 0);
-  const accreditationCount = blueprint.certifications?.length ?? 0;
-  const primaryCert = blueprint.certifications?.[0]?.name;
-  const primaryIndustry = blueprint.industries?.[0]?.name;
+  const capabilityCount = blueprint.allCapabilitiesCanonical?.length ?? 0;
+  const certs = blueprint.certifications ?? [];
+  // Distinct accreditation families (ISO 9001:2015 / ISO 9001 collapse to one).
+  const accreditationCount = new Set(
+    certs.map((c) => c.name.split(":")[0].trim()),
+  ).size;
+  const industryCount = blueprint.industries?.length ?? 0;
+  const primaryCert = certs[0]?.name ?? "—";
+  const secondaryCert = certs[1]?.name ?? "";
 
-  const tiles: { value: string; label: string }[] = [];
-  if (capabilityCount) {
-    tiles.push({ value: String(capabilityCount), label: t("tileLabels.capabilityAreas") });
-  }
-  if (accreditationCount) {
-    tiles.push({ value: String(accreditationCount), label: t("tileLabels.accreditations") });
-  }
-  if (primaryCert) tiles.push({ value: primaryCert, label: t("tileLabels.primaryCert") });
-  if (primaryIndustry) tiles.push({ value: primaryIndustry, label: t("tileLabels.industry") });
+  const stats = [
+    {
+      label: t("stats.capabilityAreas"),
+      value: String(capabilityCount),
+      sub: t("stats.capabilityAreasSub"),
+    },
+    {
+      label: t("stats.accreditations"),
+      value: String(accreditationCount),
+      sub: t("stats.accreditationsSub"),
+    },
+    {
+      label: t("stats.industriesServed"),
+      value: String(industryCount),
+      sub: t("stats.industriesServedSub"),
+    },
+    {
+      label: t("stats.qualityAnchor"),
+      value: primaryCert,
+      sub: secondaryCert,
+    },
+  ];
 
   return (
-    <section
-      id="about"
-      className="border-b border-border-soft bg-bg-alt"
-    >
-      <div className="mx-auto max-w-[1100px] px-5 py-12 md:px-12 md:py-18">
-        <SectionHeader eyebrow={t("eyebrow", { company: company.name })} title={company.about} />
-
-        <div className="mb-10 grid max-w-[680px] gap-3.5">
-          <p className="text-[15px] leading-[1.72] text-text-secondary">
-            {capabilityIntro}
+    <section id="about" className="border-b border-border-soft bg-bg-surface">
+      <div className="mx-auto max-w-[1100px] px-5 py-20 text-center md:px-12 lg:py-24">
+        <div className="mx-auto max-w-[760px]">
+          <div className="mb-5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-brand/80">
+            {t("eyebrow", { company: company.name })}
+          </div>
+          <h2 className="mx-auto text-[30px] font-semibold leading-[1.08] tracking-[-0.035em] text-text-primary sm:text-[38px] lg:text-[42px]">
+            {company.about}
+          </h2>
+          <p className="mx-auto mt-6 max-w-[680px] text-[16px] leading-[1.85] text-text-secondary">
+            {t("paragraph1")}
           </p>
-          <p className="text-[15px] leading-[1.72] text-text-secondary">
-            {whyChooseUsIntro}
+          <p className="mx-auto mt-6 max-w-[680px] text-[15.5px] leading-[1.85] text-text-secondary">
+            {t("paragraph2")}
+          </p>
+          <p className="mx-auto mt-6 max-w-[640px] text-[13.5px] leading-[1.6] text-text-muted">
+            {t("body")}
           </p>
         </div>
 
-        {tiles.length > 0 && (
-          <ul className="flex flex-wrap gap-4">
-            {tiles.map((t) => (
-              <li
-                key={t.label}
-                className="min-w-[160px] border border-border-soft bg-bg-surface px-5 py-4"
-              >
-                <div className="text-[20px] font-bold tracking-[-0.04em] text-text-primary">
-                  {t.value}
-                </div>
-                <div className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-text-muted">
-                  {t.label}
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {buyerChallengeTeaser?.title && (
-          <aside className="mt-10 grid gap-6 border-l-2 border-brand bg-bg-surface px-6 py-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-10 md:px-8 md:py-7">
-            <div className="font-mono text-[10px] font-semibold uppercase tracking-[0.26em] text-brand">
-              {t("buyerChallengeEyebrow")}
-            </div>
-            <div>
-              <p className="mb-2 text-[clamp(17px,2vw,21px)] font-semibold leading-[1.25] tracking-[-0.025em] text-text-primary">
-                {buyerChallengeTeaser.title}
-              </p>
-              {buyerChallengeTeaser.summary && (
-                <p className="text-[14px] leading-[1.65] text-text-secondary">
-                  {buyerChallengeTeaser.summary}
-                </p>
+        <dl className="mx-auto mt-12 grid max-w-3xl gap-x-10 gap-y-8 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center">
+              <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-text-muted">
+                {s.label}
+              </dt>
+              <dd className="mt-2 text-[28px] font-semibold tracking-[-0.025em] text-text-primary">
+                {s.value}
+              </dd>
+              {s.sub && (
+                <dd className="mt-1.5 text-[12.5px] leading-[1.65] text-text-muted">
+                  {s.sub}
+                </dd>
               )}
             </div>
-          </aside>
-        )}
+          ))}
+        </dl>
       </div>
     </section>
   );
