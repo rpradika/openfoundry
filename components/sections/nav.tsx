@@ -94,14 +94,20 @@ export function Nav() {
         ))}
       </ul>
 
-      <div className="flex items-center gap-4">
-        <LanguageSwitcher />
+      <div className="flex items-center gap-3 sm:gap-4">
         <a
           href="#contact"
           className="whitespace-nowrap rounded-full bg-brand px-4.5 py-2 text-[12.5px] font-semibold text-white transition-opacity hover:opacity-[0.88]"
         >
           {t("getInTouch")}
         </a>
+        {/* language switcher — far right; short codes (EN/VI) on mobile */}
+        <div className="md:hidden">
+          <LanguageSwitcher compact />
+        </div>
+        <div className="hidden md:block">
+          <LanguageSwitcher />
+        </div>
       </div>
     </nav>
   );
