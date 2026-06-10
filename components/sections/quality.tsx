@@ -2,6 +2,14 @@ import { useLocale, useTranslations } from "next-intl";
 import { getBlueprint } from "@/lib/blueprint";
 import { SectionHeader } from "./section-header";
 
+// Certification seals — rendered as logos in place of text pills.
+const CERT_LOGOS: Record<string, string> = {
+  "IATF 16949": "/images/certifications/iatf-16949.svg",
+  "ISO 9001:2015": "/images/certifications/iso-9001-2015.svg",
+  "ISO 14001": "/images/certifications/iso-14001.svg",
+  "ISO 9001": "/images/certifications/iso-9001.svg",
+};
+
 export function Quality() {
   const blueprint = getBlueprint(useLocale());
   const t = useTranslations("sections.quality");
@@ -22,15 +30,27 @@ export function Quality() {
         />
 
         {certs.length > 0 && (
-          <ul className="mb-7 flex flex-wrap gap-2.5">
-            {certs.map((c) => (
-              <li
-                key={c.name}
-                className="rounded-full border border-border-soft bg-white/70 px-4 py-2 text-[11px] font-semibold text-text-primary"
-              >
-                {c.name}
-              </li>
-            ))}
+          <ul className="mb-9 flex flex-wrap items-center gap-x-7 gap-y-6 sm:gap-x-9">
+            {certs.map((c) => {
+              const logo = CERT_LOGOS[c.name];
+              return (
+                <li key={c.name} className="flex items-center">
+                  {logo ? (
+                    <img
+                      src={logo}
+                      alt={`${c.name} certified`}
+                      title={c.name}
+                      loading="lazy"
+                      className="h-[68px] w-auto transition-transform duration-200 hover:scale-[1.04] sm:h-[80px]"
+                    />
+                  ) : (
+                    <span className="rounded-full border border-border-soft bg-white/70 px-4 py-2 text-[11px] font-semibold text-text-primary">
+                      {c.name}
+                    </span>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         )}
 
